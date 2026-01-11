@@ -1,0 +1,11 @@
+{
+    "title": "Espresso Atelier",
+    "summary": "Artisan coffee house website featuring a JS-powered filterable menu and parallax scrolling.",
+    "tags": [
+        "Design",
+        "Interactive",
+        "Cafe"
+    ],
+    "link": "/demos/espresso-atelier/index.html",
+    "thumbnail": "/demos/espresso-atelier/thumbnail.jpg"
+}

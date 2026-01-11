@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Membership | Velocity Fitness</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="./style.css">
+</head>
+
+<body class="bg-slate-900 text-slate-300 font-sans">
+
+    <!-- Nav -->
+    <nav class="fixed w-full z-50 bg-slate-900/90 backdrop-blur-md border-b border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                <div class="flex-shrink-0">
+                    <a href="./index.html" class="text-2xl font-bold text-teal-400 tracking-wider">VELOCITY</a>
+                </div>
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-baseline space-x-8">
+                        <a href="./index.html"
+                            class="nav-link text-slate-300 hover:text-teal-400 px-3 py-2 rounded-md text-sm font-medium">Home</a>
+                        <a href="./classes.html"
+                            class="nav-link text-slate-300 hover:text-teal-400 px-3 py-2 rounded-md text-sm font-medium">Classes</a>
+                        <a href="./membership.html"
+                            class="nav-link text-white px-3 py-2 rounded-md text-sm font-medium">Membership</a>
+                        <a href="./contact.html"
+                            class="nav-link text-slate-300 hover:text-teal-400 px-3 py-2 rounded-md text-sm font-medium">Contact</a>
+                    </div>
+                </div>
+                <div>
+                    <a href="./membership.html"
+                        class="btn-hover bg-teal-400 text-slate-900 px-6 py-2 rounded-full font-bold text-sm">Join
+                        Now</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <div class="pt-32 pb-20 px-4 max-w-7xl mx-auto fade-in-up">
+        <h1 class="text-4xl md:text-5xl font-bold text-white mb-6 text-center">Choose Your <span
+                class="text-teal-400">Tier</span></h1>
+        <p class="text-center text-slate-400 mb-16 max-w-2xl mx-auto">No contracts. No hidden fees. Just results.</p>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <!-- Basic Plan -->
+            <div
+                class="bg-slate-800 p-8 rounded-2xl border border-slate-700 flex flex-col hover:border-teal-400 transition-colors">
+                <h3 class="text-2xl font-bold text-white mb-2">Essential</h3>
+                <div class="text-4xl font-bold text-teal-400 mb-6">$49<span
+                        class="text-lg text-slate-500 font-normal">/mo</span></div>
+                <ul class="space-y-4 mb-8 flex-1">
+                    <li class="flex items-center"><span class="text-teal-400 mr-2">✓</span> Gym Access</li>
+                    <li class="flex items-center"><span class="text-teal-400 mr-2">✓</span> Locker Room</li>
+                    <li class="flex items-center"><span class="text-teal-400 mr-2">✓</span> Free Wifi</li>
+                </ul>
+                <a href="./contact.html"
+                    class="btn-hover block w-full text-center bg-slate-700 text-white py-3 rounded-xl font-bold hover:bg-white hover:text-slate-900">Select
+                    Plan</a>
+            </div>
+
+            <!-- Pro Plan (Featured) -->
+            <div
+                class="bg-teal-900/20 p-8 rounded-2xl border-2 border-teal-400 flex flex-col relative transform md:-translate-y-4">
+                <div
+                    class="absolute top-0 right-0 bg-teal-400 text-slate-900 text-xs font-bold px-3 py-1 rounded-bl-lg rounded-tr-lg">
+                    MOST POPULAR</div>
+                <h3 class="text-2xl font-bold text-white mb-2">Performance</h3>
+                <div class="text-4xl font-bold text-teal-400 mb-6">$89<span
+                        class="text-lg text-slate-500 font-normal">/mo</span></div>
+                <ul class="space-y-4 mb-8 flex-1">
+                    <li class="flex items-center"><span class="text-teal-400 mr-2">✓</span> <strong>24/7 Access</strong>
+                    </li>
+                    <li class="flex items-center"><span class="text-teal-400 mr-2">✓</span> All Group Classes</li>
+                    <li class="flex items-center"><span class="text-teal-400 mr-2">✓</span> 1 Guest Pass/mo</li>
+                    <li class="flex items-center"><span class="text-teal-400 mr-2">✓</span> Sauna Access</li>
+                </ul>
+                <a href="./contact.html"
+                    class="btn-hover block w-full text-center bg-teal-400 text-slate-900 py-3 rounded-xl font-bold">Select
+                    Plan</a>
+            </div>
+
+            <!-- Elite Plan -->
+            <div
+                class="bg-slate-800 p-8 rounded-2xl border border-slate-700 flex flex-col hover:border-teal-400 transition-colors">
+                <h3 class="text-2xl font-bold text-white mb-2">Elite</h3>
+                <div class="text-4xl font-bold text-teal-400 mb-6">$149<span
+                        class="text-lg text-slate-500 font-normal">/mo</span></div>
+                <ul class="space-y-4 mb-8 flex-1">
+                    <li class="flex items-center"><span class="text-teal-400 mr-2">✓</span> All Performance perks</li>
+                    <li class="flex items-center"><span class="text-teal-400 mr-2">✓</span> 2 Personal Training Sessions
+                    </li>
+                    <li class="flex items-center"><span class="text-teal-400 mr-2">✓</span> Nutrition Plan</li>
+                    <li class="flex items-center"><span class="text-teal-400 mr-2">✓</span> Dedicated Locker</li>
+                </ul>
+                <a href="./contact.html"
+                    class="btn-hover block w-full text-center bg-slate-700 text-white py-3 rounded-xl font-bold hover:bg-white hover:text-slate-900">Select
+                    Plan</a>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>

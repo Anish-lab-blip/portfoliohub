@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Azure Estates | Valuation</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="bg-[#0F172A] text-white h-screen flex flex-col">
+
+    <!-- Nav (Dark Mode Variant) -->
+    <nav
+        class="fixed w-full z-50 bg-[#0F172A]/90 backdrop-blur-sm border-b border-white/10 transition-all duration-300">
+        <div class="max-w-[1400px] mx-auto px-6 h-24 flex justify-between items-center">
+            <a href="./index.html" class="flex flex-col items-center group">
+                <span class="font-serif text-2xl tracking-[0.2em] font-bold text-white">AZURE</span>
+                <span class="text-[0.5rem] tracking-[0.4em] uppercase text-gold-500 mt-1">Global Estates</span>
+            </a>
+            <div
+                class="hidden lg:flex items-center space-x-10 text-xs font-medium tracking-[0.15em] uppercase text-gray-400">
+                <a href="./index.html" class="nav-link hover:text-white transition">Home</a>
+                <a href="./listings.html" class="nav-link hover:text-white transition">Listings</a>
+                <a href="./about.html" class="nav-link hover:text-white transition">Heritage</a>
+                <a href="./agents.html" class="nav-link hover:text-white transition">Agents</a>
+                <a href="./sellers.html"
+                    class="nav-link hover:text-white transition text-white border-b-2 border-gold pb-1">Valuation</a>
+                <a href="./lifestyle.html" class="nav-link hover:text-white transition">Lifestyle</a>
+                <a href="./contact.html"
+                    class="px-8 py-3 bg-white text-[#0F172A] hover:bg-[#D4AF37] hover:text-white transition duration-500">Private
+                    Office</a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="flex-1 flex items-center justify-center px-4 relative">
+        <!-- Background Pattern -->
+        <div class="absolute inset-0 bg-[#0F172A] z-0">
+            <div
+                class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-gold opacity-[0.03] rounded-full blur-[100px]">
+            </div>
+        </div>
+
+        <div class="max-w-2xl w-full bg-[#FAFAFA] text-[#0F172A] p-16 shadow-2xl relative z-10 border border-gold/20">
+            <div class="text-center mb-10">
+                <span class="block text-gold text-xs tracking-widest uppercase mb-4">Invitation to Sell</span>
+                <h1 class="font-serif text-4xl mb-4">Property Valuation</h1>
+                <p class="font-light text-gray-500 text-sm">Complimentary private assessment for qualified estates.</p>
+            </div>
+
+            <form class="space-y-6">
+                <div class="grid grid-cols-2 gap-6">
+                    <input type="text" placeholder="First Name"
+                        class="input-luxury text-sm placeholder-gray-400 border-gray-300">
+                    <input type="text" placeholder="Last Name"
+                        class="input-luxury text-sm placeholder-gray-400 border-gray-300">
+                </div>
+                <input type="text" placeholder="Property Address"
+                    class="w-full input-luxury text-sm placeholder-gray-400 border-gray-300">
+                <div class="grid grid-cols-2 gap-6">
+                    <input type="email" placeholder="Email Address"
+                        class="input-luxury text-sm placeholder-gray-400 border-gray-300">
+                    <input type="tel" placeholder="Phone Number"
+                        class="input-luxury text-sm placeholder-gray-400 border-gray-300">
+                </div>
+                <button class="w-full btn-gold mt-6 py-4">Request Assessment</button>
+            </form>
+        </div>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

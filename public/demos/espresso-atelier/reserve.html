@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reserve a Table | Espresso Atelier</title>
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .reserve-hero {
+            height: 50vh;
+            background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&q=80');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Nav -->
+    <nav class="navbar">
+        <div class="container nav-container">
+            <a href="index.html" class="logo">ESPRESSO ATELIER</a>
+            <div class="nav-links">
+                <a href="index.html">Home</a>
+                <a href="menu.html">Menu</a>
+                <a href="story.html">Story</a>
+                <a href="reserve.html">Reserve</a>
+            </div>
+        </div>
+    </nav>
+
+    <header class="reserve-hero">
+        <div class="hero-content">
+            <h1>Save Your Spot</h1>
+            <p>Join us for brunch, coffee tastings, or a quiet afternoon.</p>
+        </div>
+    </header>
+
+    <section class="section-padding">
+        <div class="container">
+            <div class="form-container scroll-reveal">
+                <form onsubmit="event.preventDefault(); alert('Table Requested! We will confirm via email shortly.');">
+                    <h3 class="text-center" style="margin-bottom: 2rem; color: var(--text-charcoal);">Table Request</h3>
+
+                    <div class="form-group">
+                        <label class="form-label">Full Name</label>
+                        <input type="text" class="form-control" placeholder="Jane Doe" required>
+                    </div>
+
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem;">
+                        <div class="form-group">
+                            <label class="form-label">Date</label>
+                            <input type="date" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label">Time</label>
+                            <input type="time" class="form-control" required>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label">Party Size</label>
+                        <select class="form-control">
+                            <option>1 Person</option>
+                            <option>2 People</option>
+                            <option>3 People</option>
+                            <option>4 People</option>
+                            <option>5+ (Please call)</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label">Special Requests</label>
+                        <textarea class="form-control" rows="3"
+                            placeholder="Dietary restrictions, seating preference..."></textarea>
+                    </div>
+
+                    <button type="submit" class="btn-gold"
+                        style="width: 100%; text-align: center; border: none; cursor: pointer;">Confirm Booking</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <footer style="background: var(--text-charcoal); color: #888; padding: 4rem 0; text-align: center;">
+        <div class="container">
+            <h2 class="logo" style="color: white; margin-bottom: 2rem;">ESPRESSO ATELIER</h2>
+            <p style="margin-bottom: 2rem;">142 Artisan Avenue, Design District, NY</p>
+            <p>&copy; 2026 Espresso Atelier. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

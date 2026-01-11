@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu | Espresso Atelier</title>
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Specific header for menu page */
+        .menu-header {
+            background-color: var(--text-charcoal);
+            color: white;
+            padding: 8rem 0 4rem;
+            text-align: center;
+        }
+
+        .menu-header h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Nav -->
+    <nav class="navbar">
+        <div class="container nav-container">
+            <a href="index.html" class="logo">ESPRESSO ATELIER</a>
+            <div class="nav-links">
+                <a href="index.html">Home</a>
+                <a href="menu.html">Menu</a>
+                <a href="story.html">Story</a>
+                <a href="reserve.html">Reserve</a>
+            </div>
+        </div>
+    </nav>
+
+    <header class="menu-header">
+        <div class="container">
+            <h1>Curated Tastes</h1>
+            <p style="opacity: 0.8; max-width: 600px; margin: 0 auto;">Seasonal ingredients, expert preparation, and a
+                passion for flavor.</p>
+        </div>
+    </header>
+
+    <section class="section-padding">
+        <div class="container">
+
+            <div class="filter-nav scroll-reveal">
+                <button class="filter-btn active" data-filter="all">All</button>
+                <button class="filter-btn" data-filter="coffee">Coffee</button>
+                <button class="filter-btn" data-filter="pastry">Pastries</button>
+                <button class="filter-btn" data-filter="brunch">Brunch</button>
+            </div>
+
+            <div class="menu-grid">
+                <!-- COFFEE ITEMS -->
+                <div class="menu-item scroll-reveal" data-category="coffee">
+                    <div class="menu-img-container">
+                        <img src="https://images.unsplash.com/photo-1541167760496-1628856ab772?auto=format&fit=crop&q=80"
+                            alt="Latte">
+                        <div class="order-overlay"><span class="btn-sm">Add to Order</span></div>
+                    </div>
+                    <div class="menu-info">
+                        <div>
+                            <h3>Velvet Latte</h3>
+                            <p style="font-size: 0.9rem; color: #666;">Double shot with steamed oat milk</p>
+                        </div>
+                        <span class="price">$6.00</span>
+                    </div>
+                </div>
+
+                <div class="menu-item scroll-reveal" data-category="coffee">
+                    <div class="menu-img-container">
+                        <img src="https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?auto=format&fit=crop&q=80"
+                            alt="Espresso">
+                        <div class="order-overlay"><span class="btn-sm">Add to Order</span></div>
+                    </div>
+                    <div class="menu-info">
+                        <div>
+                            <h3>Classic Espresso</h3>
+                            <p style="font-size: 0.9rem; color: #666;">Single origin Ethiopian Yirgacheffe</p>
+                        </div>
+                        <span class="price">$3.50</span>
+                    </div>
+                </div>
+
+                <!-- PASTRY ITEMS -->
+                <div class="menu-item scroll-reveal" data-category="pastry">
+                    <div class="menu-img-container">
+                        <img src="https://images.unsplash.com/photo-1555507036-ab1f40388085?auto=format&fit=crop&q=80"
+                            alt="Croissant">
+                        <div class="order-overlay"><span class="btn-sm">Add to Order</span></div>
+                    </div>
+                    <div class="menu-info">
+                        <div>
+                            <h3>Butter Croissant</h3>
+                            <p style="font-size: 0.9rem; color: #666;">French butter, baked fresh daily</p>
+                        </div>
+                        <span class="price">$4.50</span>
+                    </div>
+                </div>
+
+                <div class="menu-item scroll-reveal" data-category="pastry">
+                    <div class="menu-img-container">
+                        <img src="https://images.unsplash.com/photo-1606313564200-e75d5e30476c?auto=format&fit=crop&q=80"
+                            alt="Torte">
+                        <div class="order-overlay"><span class="btn-sm">Add to Order</span></div>
+                    </div>
+                    <div class="menu-info">
+                        <div>
+                            <h3>Dark Chocolate Torte</h3>
+                            <p style="font-size: 0.9rem; color: #666;">Flourless, 70% cacao, berry coulis</p>
+                        </div>
+                        <span class="price">$8.00</span>
+                    </div>
+                </div>
+
+                <!-- BRUNCH ITEMS -->
+                <div class="menu-item scroll-reveal" data-category="brunch">
+                    <div class="menu-img-container">
+                        <img src="https://images.unsplash.com/photo-1525351484164-32fd24125344?auto=format&fit=crop&q=80"
+                            alt="Avocado Toast">
+                        <div class="order-overlay"><span class="btn-sm">Add to Order</span></div>
+                    </div>
+                    <div class="menu-info">
+                        <div>
+                            <h3>Truffle Avo Toast</h3>
+                            <p style="font-size: 0.9rem; color: #666;">Sourdough, poached egg, truffle oil</p>
+                        </div>
+                        <span class="price">$14.00</span>
+                    </div>
+                </div>
+
+                <div class="menu-item scroll-reveal" data-category="brunch">
+                    <div class="menu-img-container">
+                        <img src="https://images.unsplash.com/photo-1484723091739-30a097e8f929?auto=format&fit=crop&q=80"
+                            alt="French Toast">
+                        <div class="order-overlay"><span class="btn-sm">Add to Order</span></div>
+                    </div>
+                    <div class="menu-info">
+                        <div>
+                            <h3>Brioche French Toast</h3>
+                            <p style="font-size: 0.9rem; color: #666;">Maple syrup, fresh berries, cream</p>
+                        </div>
+                        <span class="price">$13.50</span>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <footer style="background: var(--text-charcoal); color: #888; padding: 4rem 0; text-align: center;">
+        <div class="container">
+            <h2 class="logo" style="color: white; margin-bottom: 2rem;">ESPRESSO ATELIER</h2>
+            <p style="margin-bottom: 2rem;">142 Artisan Avenue, Design District, NY</p>
+            <p>&copy; 2026 Espresso Atelier. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

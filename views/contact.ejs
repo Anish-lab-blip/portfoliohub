@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Get a Quote | Vibe Coder</title>
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Poppins:wght@700&display=swap"
+        rel="stylesheet">
+    <!-- Styles -->
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+    <div class="bg-glow"></div>
+    <div class="bg-glow-2"></div>
+
+    <div class="container">
+        <!-- Simple Nav -->
+        <nav style="padding: 2rem 0; display: flex; justify-content: space-between; align-items: center;">
+            <a href="/" style="font-weight: bold; font-size: 1.2rem;">Vibe Coder.</a>
+            <a href="/" style="color: var(--text-secondary); font-size: 0.9rem;">← Back Home</a>
+        </nav>
+
+        <section class="form-container card reveal">
+            <h1 style="text-align: center; margin-bottom: 0.5rem;">Let's Build Something</h1>
+
+            <% if (msg==='success' ) { %>
+                <div
+                    style="background: rgba(0, 255, 0, 0.1); border: 1px solid lime; color: lime; padding: 1rem; border-radius: 8px; margin-bottom: 2rem; text-align: center;">
+                    <strong>Message Sent!</strong> I'll get back to you shortly.
+                </div>
+                <% } else if (msg==='error' ) { %>
+                    <div
+                        style="background: rgba(255, 0, 0, 0.1); border: 1px solid red; color: red; padding: 1rem; border-radius: 8px; margin-bottom: 2rem; text-align: center;">
+                        <strong>Transmission Failed.</strong> Check server logs or try again later.
+                    </div>
+                    <% } else { %>
+                        <p style="text-align: center; color: var(--text-secondary); margin-bottom: 2rem;">
+                            Tell me about your vision. I'll handle the vibe.
+                        </p>
+                        <% } %>
+
+                            <form action="/contact" method="POST">
+                                <div class="form-group">
+                                    <label class="form-label">Your Name</label>
+                                    <input type="text" name="name" class="form-control" placeholder="Jane Doe" required>
+                                </div>
+
+                                <div class="form-group">
+                                    <label class="form-label">Email Address</label>
+                                    <input type="email" name="email" class="form-control" placeholder="jane@example.com"
+                                        required>
+                                </div>
+
+                                <div class="row" style="display: flex; gap: 1rem;">
+                                    <div class="form-group" style="flex: 1;">
+                                        <label class="form-label">Project Type</label>
+                                        <select name="projectType" class="form-control"
+                                            style="background-color: #0a0a0a;"> <!-- bg fix for select -->
+                                            <option>Portfolio / Personal Site</option>
+                                            <option>E-commerce Brand</option>
+                                            <option>SaaS Dashboard</option>
+                                            <option>Other</option>
+                                        </select>
+                                    </div>
+                                    <div class="form-group" style="flex: 1;">
+                                        <label class="form-label">Budget Range</label>
+                                        <select name="budget" class="form-control" style="background-color: #0a0a0a;">
+                                            <option>$1k - $3k</option>
+                                            <option>$3k - $8k</option>
+                                            <option>$8k+</option>
+                                        </select>
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label class="form-label">Project Details</label>
+                                    <textarea name="details" class="form-control"
+                                        placeholder="What are we building? Any specific inspirations?"></textarea>
+                                </div>
+
+                                <button type="submit" class="btn-primary">Request Quote</button>
+                            </form>
+        </section>
+
+        <footer
+            style="margin-top: 4rem; padding-bottom: 2rem; color: var(--text-secondary); text-align: center; font-size: 0.8rem;">
+            <p>Ready to deploy.</p>
+        </footer>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,12 @@
+{
+    "title": "Nexus Mart",
+    "summary": "Cyber-Industrial E-Commerce Simulation. Features 3D Product Layouts, Mission Control Admin Dashboard, and a smart 'Fly-to-Cart' interaction model.",
+    "tags": [
+        "Cyberpunk",
+        "E-Commerce",
+        "Admin Panel",
+        "GSAP"
+    ],
+    "link": "/demos/nexus-mart/index.html",
+    "thumbnail": "/demos/nexus-mart/thumbnail.jpg"
+}

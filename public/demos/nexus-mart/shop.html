@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nexus Mart | Next Gen Shopping</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="data.js"></script>
+    <link rel="stylesheet" href="style.css">
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+</head>
+
+<body class="bg-matte text-white">
+
+    <!-- Header -->
+    <nav class="fixed top-0 w-full z-50 px-6 py-4 flex justify-between items-center glass-panel">
+        <a href="index.html" class="logo-text text-xl font-bold tracking-tighter">NEXUS<span
+                class="logo-accent">MART</span></a>
+
+        <div class="flex-1 max-w-xl mx-8 hidden md:block relative">
+            <input type="text" id="searchInput" placeholder="SEARCH CATALOG..."
+                class="w-full py-2 px-4 bg-gunmetal border border-gray-700 text-white focus:border-accent-volt text-sm tracking-widest">
+        </div>
+
+        <div class="flex items-center space-x-6">
+            <a href="login.html" class="text-gray-400 hover:text-white text-xs font-bold tracking-widest">LOGIN</a>
+            <a href="cart.html" class="flex items-center text-sm font-bold relative cart-icon-wrapper">
+                <ion-icon name="cart-outline" class="text-xl mr-2"></ion-icon>
+                <span id="cartCount" class="text-accent-volt">0</span>
+            </a>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <div class="pt-24 px-6 pb-12 container mx-auto">
+
+        <div class="flex flex-col md:flex-row justify-between items-center mb-10">
+            <h1 class="text-4xl mb-4 md:mb-0">CATALOG 2099</h1>
+
+            <!-- Top Bar Filters -->
+            <div class="flex space-x-4 overflow-x-auto pb-2 w-full md:w-auto">
+                <button
+                    class="filter-chip px-4 py-1 border border-accent-volt text-accent-volt text-xs font-bold uppercase hover:bg-accent-volt hover:text-black transition active"
+                    onclick="filter('all')">All</button>
+                <button
+                    class="filter-chip px-4 py-1 border border-gray-700 text-gray-400 text-xs font-bold uppercase hover:border-white hover:text-white transition"
+                    onclick="filter('Electronics')">Electronics</button>
+                <button
+                    class="filter-chip px-4 py-1 border border-gray-700 text-gray-400 text-xs font-bold uppercase hover:border-white hover:text-white transition"
+                    onclick="filter('Fashion')">Fashion</button>
+            </div>
+        </div>
+
+        <div id="productGrid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            <!-- Rendered via JS -->
+        </div>
+
+    </div>
+
+    <script>
+        // Init
+        const grid = document.getElementById('productGrid');
+        const searchInput = document.getElementById('searchInput');
+        let allProducts = window.Nexus.getProducts();
+
+        function updateCartCount() {
+            const cart = window.Nexus.getCart();
+            document.getElementById('cartCount').textContent = cart.length;
+        }
+
+        function renderProducts(products) {
+            if (products.length === 0) {
+                grid.innerHTML = `
+                    <div class="col-span-full h-96 flex flex-col items-center justify-center text-gray-600 opacity-50">
+                        <ion-icon name="planet-outline" class="text-6xl mb-4"></ion-icon>
+                        <h2 class="font-head tracking-widest text-lg">NO SIGNALS DETECTED</h2>
+                    </div>
+                `;
+                return;
+            }
+
+            grid.innerHTML = products.map(p => `
+                <div class="nexus-card p-4 group relative">
+                    <div class="relative h-64 w-full mb-4 bg-black/20 flex items-center justify-center overflow-hidden">
+                        <img src="${p.image}" alt="${p.name}" class="h-4/5 w-4/5 object-contain grayscale group-hover:grayscale-0 transition duration-500 group-hover:scale-110">
+                        <div class="absolute top-2 right-2 px-2 py-1 border border-accent-volt text-accent-volt text-[10px] font-mono uppercase tracking-widest opacity-0 group-hover:opacity-100 transition">In Stock</div>
+                    </div>
+                    
+                    <div class="flex justify-between items-start mb-2">
+                         <div>
+                            <h3 class="text-xs text-gray-500 mb-1 font-mono uppercase tracking-wider">${p.brand}</h3>
+                            <a href="product.html?id=${p.id}" class="text-lg font-bold leading-tight block hover:text-accent-volt transition">${p.name}</a>
+                         </div>
+                         <div class="text-right">
+                             <div class="text-accent-volt font-mono font-bold">$${p.price}</div>
+                         </div>
+                    </div>
+
+                    <button onclick="addToCart(event, ${p.id})" class="w-full mt-2 border border-gray-700 hover:border-accent-volt text-gray-400 hover:text-accent-volt py-2 text-xs font-bold uppercase tracking-widest transition">Add To Cart</button>
+                </div>
+            `).join('');
+
+            gsap.from(".nexus-card", {
+                y: 30,
+                opacity: 0,
+                duration: 0.5,
+                stagger: 0.1,
+                clearProps: "all"
+            });
+        }
+
+        // Fly Cart (Re-implemented for dark mode visibility)
+        window.addToCart = (e, id) => {
+            const product = window.Nexus.getProduct(id);
+            window.Nexus.addToCart(product);
+
+            const button = e.target;
+            const cartIcon = document.querySelector('.cart-icon-wrapper ion-icon');
+
+            const flyer = document.createElement('div');
+            flyer.style.position = 'fixed';
+            flyer.style.zIndex = 100;
+            flyer.style.width = '15px';
+            flyer.style.height = '15px';
+            flyer.style.backgroundColor = '#CCFF00'; // Volt
+
+            const btnRect = button.getBoundingClientRect();
+            const cartRect = cartIcon.getBoundingClientRect();
+
+            flyer.style.top = btnRect.top + 'px';
+            flyer.style.left = (btnRect.left + btnRect.width / 2) + 'px';
+            document.body.appendChild(flyer);
+
+            gsap.to(flyer, {
+                top: cartRect.top + 10,
+                left: cartRect.left + 10,
+                scale: 0.2,
+                duration: 0.6,
+                ease: "power2.inOut",
+                onComplete: () => {
+                    flyer.remove();
+                    updateCartCount();
+                }
+            });
+        };
+
+        // Filter Logic
+        window.filter = (category) => {
+            document.querySelectorAll('.filter-chip').forEach(btn => {
+                btn.classList.remove('border-accent-volt', 'text-accent-volt');
+                btn.classList.add('border-gray-700', 'text-gray-400');
+                if ((category === 'all' && btn.innerText === 'ALL') || btn.innerText === category.toUpperCase()) {
+                    btn.classList.add('border-accent-volt', 'text-accent-volt');
+                    btn.classList.remove('border-gray-700', 'text-gray-400');
+                }
+            });
+
+            if (category === 'all') {
+                renderProducts(allProducts);
+            } else {
+                renderProducts(allProducts.filter(p => p.category === category));
+            }
+        };
+
+        // Debounce Search
+        let timeout = null;
+        searchInput.addEventListener('input', (e) => {
+            clearTimeout(timeout);
+            timeout = setTimeout(() => {
+                const term = e.target.value.toLowerCase();
+                const filtered = allProducts.filter(p => p.name.toLowerCase().includes(term) || p.brand.toLowerCase().includes(term));
+                renderProducts(filtered);
+            }, 300); // 300ms debounce
+        });
+
+        // Initial Load
+        renderProducts(allProducts);
+        updateCartCount();
+
+    </script>
+</body>
+
+</html>

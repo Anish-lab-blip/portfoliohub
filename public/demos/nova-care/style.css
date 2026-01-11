@@ -1,0 +1,91 @@
+/* Nova Care - Healthcare Design System */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+:root {
+    --color-primary: #0284c7;
+    /* Trust Blue */
+    --color-secondary: #0ea5e9;
+    /* Light Blue */
+    --color-red: #ef4444;
+    /* Emergency Red */
+    --color-slate: #f1f5f9;
+    /* Clean Slate */
+    --color-dark: #0f172a;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    color: var(--color-dark);
+    -webkit-font-smoothing: antialiased;
+}
+
+/* Custom Utilities */
+.text-primary {
+    color: var(--color-primary);
+}
+
+.bg-primary {
+    background-color: var(--color-primary);
+}
+
+.btn-primary {
+    background-color: var(--color-primary);
+    color: white;
+    transition: all 0.2s ease;
+}
+
+.btn-primary:hover {
+    background-color: #0369a1;
+    transform: translateY(-1px);
+}
+
+.btn-emergency {
+    background-color: var(--color-red);
+    color: white;
+    font-weight: 700;
+    animation: pulse-red 2s infinite;
+}
+
+@keyframes pulse-red {
+    0% {
+        box-shadow: 0 0 0 0 rgba(239, 68, 68, 0.7);
+    }
+
+    70% {
+        box-shadow: 0 0 0 10px rgba(239, 68, 68, 0);
+    }
+
+    100% {
+        box-shadow: 0 0 0 0 rgba(239, 68, 68, 0);
+    }
+}
+
+.card-hover {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.card-hover:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+}
+
+/* Form Styles */
+.input-medical {
+    width: 100%;
+    border: 1px solid #cbd5e1;
+    border-radius: 0.5rem;
+    /* rounded-lg */
+    padding: 0.75rem 1rem;
+    transition: border-color 0.2s;
+}
+
+.input-medical:focus {
+    outline: none;
+    border-color: var(--color-primary);
+    ring: 2px solid var(--color-primary);
+}
+
+/* Hero Overlay */
+.hero-overlay {
+    background: linear-gradient(90deg, rgba(255, 255, 255, 0.95) 0%, rgba(255, 255, 255, 0.8) 50%, rgba(255, 255, 255, 0) 100%);
+}

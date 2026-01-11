@@ -1,0 +1,112 @@
+/* Horizon University - Royal & Digital Design System */
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,400&family=Source+Sans+Pro:wght@300;400;600;700&display=swap');
+
+:root {
+    --color-regal: #4c1d95;
+    /* Violet 900 */
+    --color-gold: #fbbf24;
+    /* Amber 400 */
+    --color-dark: #1e1b4b;
+    /* Indigo 950 */
+    --color-light: #f3f4f6;
+}
+
+body {
+    font-family: 'Source Sans Pro', sans-serif;
+    color: #334155;
+    -webkit-font-smoothing: antialiased;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: 'Merriweather', serif;
+}
+
+/* Custom Utilities */
+.text-regal {
+    color: var(--color-regal);
+}
+
+.bg-regal {
+    background-color: var(--color-regal);
+}
+
+.text-gold {
+    color: var(--color-gold);
+}
+
+.bg-gold {
+    background-color: var(--color-gold);
+}
+
+.btn-apply-sticky {
+    position: fixed;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%) rotate(-90deg) translateX(50%);
+    transform-origin: right bottom;
+    z-index: 100;
+    background: var(--color-gold);
+    color: var(--color-regal);
+    font-weight: 700;
+    padding: 1rem 2rem;
+    box-shadow: -4px 0 15px rgba(0, 0, 0, 0.2);
+    border-radius: 8px 8px 0 0;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.btn-apply-sticky:hover {
+    padding-bottom: 2.5rem;
+    /* Slide out effect */
+}
+
+/* Mega Menu */
+.mega-menu {
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(10px);
+    transition: all 0.3s ease;
+    background-color: white; /* Explicitly set as requested */
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04); /* Tailwind xl shadow equivalent */
+    z-index: 100;
+}
+
+.group:hover .mega-menu {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+/* Parallax Hero */
+.hero-parallax {
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+/* Footer Hover Slide */
+.footer-link {
+    transition: transform 0.2s ease;
+    display: inline-block;
+}
+
+.footer-link:hover {
+    transform: translateX(8px);
+    color: var(--color-gold);
+}
+
+/* Stats Counter Animation */
+.stat-number {
+    font-variant-numeric: tabular-nums;
+}
+
+/* Smooth Scroll */
+html {
+    scroll-behavior: smooth;
+}

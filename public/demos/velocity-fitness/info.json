@@ -1,0 +1,11 @@
+{
+    "title": "Velocity Fitness",
+    "summary": "High-performance gym website featuring class schedules and membership tiers.",
+    "tags": [
+        "Tailwind",
+        "Responsive",
+        "Fitness"
+    ],
+    "link": "/demos/velocity-fitness/index.html",
+    "thumbnail": "/demos/velocity-fitness/thumbnail.jpg"
+}

@@ -1,0 +1,77 @@
+/* Orbit SaaS Design System */
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap');
+
+:root {
+    --primary: #4f46e5;
+    --primary-dark: #4338ca;
+    --slate-900: #0f172a;
+    --slate-600: #475569;
+    --slate-50: #f8fafc;
+}
+
+body {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    color: var(--slate-900);
+    background-color: #ffffff;
+    -webkit-font-smoothing: antialiased;
+}
+
+/* Smooth Nav Link Hover */
+.nav-link {
+    padding: 0.5rem 1rem;
+    border-radius: 9999px;
+    /* Pill shape */
+    transition: all 0.2s ease;
+    color: var(--slate-600);
+    font-weight: 500;
+}
+
+.nav-link:hover {
+    background-color: var(--slate-50);
+    color: var(--primary);
+}
+
+.nav-link.active {
+    color: var(--primary);
+    background-color: #eef2ff;
+    /* Indigo-50 */
+}
+
+/* Mesh Gradient Background */
+.hero-mesh {
+    background-color: #ffffff;
+    background-image:
+        radial-gradient(at 0% 0%, hsla(253, 16%, 7%, 1) 0, transparent 50%),
+        radial-gradient(at 50% 0%, hsla(225, 39%, 30%, 1) 0, transparent 50%),
+        radial-gradient(at 100% 0%, hsla(339, 49%, 30%, 1) 0, transparent 50%);
+    background-image:
+        radial-gradient(at 40% 20%, hsla(266, 50%, 96%, 1) 0px, transparent 50%),
+        radial-gradient(at 80% 0%, hsla(242, 50%, 94%, 1) 0px, transparent 50%),
+        radial-gradient(at 0% 50%, hsla(340, 50%, 96%, 1) 0px, transparent 50%);
+}
+
+/* Bento Grid Cards */
+.bento-card {
+    background: white;
+    border: 1px solid #e2e8f0;
+    border-radius: 1.5rem;
+    padding: 2rem;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.bento-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+    border-color: #cbd5e1;
+}
+
+/* Custom Button Gradients */
+.btn-primary {
+    background: linear-gradient(135deg, #6366f1 0%, #4f46e5 100%);
+    transition: all 0.3s ease;
+}
+
+.btn-primary:hover {
+    box-shadow: 0 10px 15px -3px rgba(79, 70, 229, 0.3);
+    transform: translateY(-1px);
+}

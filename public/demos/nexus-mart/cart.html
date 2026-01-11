@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cart | Nexus Mart</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="data.js"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="bg-matte text-white">
+
+    <div class="max-w-7xl mx-auto px-6 py-12">
+        <div class="flex justify-between items-end mb-8 border-b border-gray-800 pb-4">
+            <h1 class="text-3xl font-head tracking-tighter">CART_CONTENTS</h1>
+            <a href="shop.html" class="text-xs text-gray-500 hover:text-accent-volt tracking-widest">CONTINUE
+                BROWSING</a>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-12">
+
+            <!-- Items Column -->
+            <div class="lg:col-span-2">
+                <div id="cartItems" class="space-y-4">
+                    <!-- JS Injected -->
+                </div>
+            </div>
+
+            <!-- Summary Column -->
+            <div class="lg:col-span-1">
+                <div class="bg-gunmetal border border-glass-border p-8 sticky top-6 glass-panel">
+                    <h2 class="text-sm font-mono text-gray-400 mb-6 uppercase tracking-widest">Order Summary</h2>
+
+                    <div class="space-y-3 mb-6 border-b border-gray-700 pb-6 text-sm font-mono text-gray-300">
+                        <div class="flex justify-between">
+                            <span>Subtotal</span>
+                            <span id="summarySubtotal">$0.00</span>
+                        </div>
+                        <div class="flex justify-between">
+                            <span>Cyber Tax (5%)</span>
+                            <span id="summaryTax">$0.00</span>
+                        </div>
+                    </div>
+
+                    <div class="flex justify-between items-end mb-8">
+                        <span class="text-lg font-bold">Total</span>
+                        <span id="summaryTotal" class="text-3xl font-head text-accent-volt">$0.00</span>
+                    </div>
+
+                    <button onclick="openPayment()"
+                        class="w-full btn-volt py-4 text-center tracking-widest hover:shadow-[0_0_30px_rgba(204,255,0,0.3)] transition">INITIATE
+                        CHECKOUT</button>
+
+                    <div class="mt-4 text-[10px] text-gray-600 text-center font-mono">
+                        SECURE ENCRYPTION ENABLED // NODE_ID: 884
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 3D Flip Payment Modal -->
+    <style>
+        .flip-container {
+            perspective: 1000px;
+        }
+
+        .flipper {
+            transition: 0.6s;
+            transform-style: preserve-3d;
+            position: relative;
+        }
+
+        .front,
+        .back {
+            backface-visibility: hidden;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+        }
+
+        .back {
+            transform: rotateY(180deg);
+        }
+
+        .flipped {
+            transform: rotateY(180deg);
+        }
+    </style>
+
+    <div id="paymentModal" class="fixed inset-0 bg-black/90 hidden items-center justify-center z-50 backdrop-blur-sm">
+        <div class="flip-container w-full max-w-md h-[500px]">
+            <div class="flipper w-full h-full" id="cardFlipper">
+
+                <!-- Front (Details) -->
+                <div class="front bg-gunmetal border border-glass-border p-8 shadow-2xl relative">
+                    <button onclick="closeModal()"
+                        class="absolute top-4 right-4 text-gray-500 hover:text-white"><ion-icon name="close-outline"
+                            class="text-2xl"></ion-icon></button>
+
+                    <div class="mb-6 flex justify-between items-center">
+                        <h2 class="text-xl font-head tracking-widest">PAYMENT</h2>
+                        <div class="h-6 w-10 bg-gray-700 rounded blur-sm"></div>
+                    </div>
+
+                    <form id="paymentForm"
+                        onsubmit="event.preventDefault(); document.getElementById('cardFlipper').classList.add('flipped');">
+                        <div class="space-y-4">
+                            <div>
+                                <label class="text-[10px] font-mono text-accent-volt uppercase">Cardholder</label>
+                                <input type="text"
+                                    class="w-full p-3 bg-black/50 border border-gray-700 text-white font-mono" required>
+                            </div>
+                            <div>
+                                <label class="text-[10px] font-mono text-accent-volt uppercase">Card Number</label>
+                                <input type="text"
+                                    class="w-full p-3 bg-black/50 border border-gray-700 text-white font-mono"
+                                    placeholder="0000 0000 0000 0000" required>
+                            </div>
+                            <div class="grid grid-cols-2 gap-4">
+                                <div>
+                                    <label class="text-[10px] font-mono text-accent-volt uppercase">Expires</label>
+                                    <input type="text"
+                                        class="w-full p-3 bg-black/50 border border-gray-700 text-white font-mono"
+                                        placeholder="MM/YY" required>
+                                </div>
+                                <div>
+                                    <label class="text-[10px] font-mono text-accent-volt uppercase">CVC</label>
+                                    <button type="submit"
+                                        class="w-full p-3 bg-gray-800 border border-gray-600 text-gray-400 hover:text-white text-left font-mono">Enter
+                                        ></button>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+
+                <!-- Back (CVV & Pay) -->
+                <div class="back bg-gunmetal border border-glass-border p-8 shadow-2xl flex flex-col justify-center">
+                    <h2 class="text-xl font-head tracking-widest mb-6 text-center">SECURITY CODE</h2>
+
+                    <div class="w-full h-12 bg-black mb-6 flex items-center justify-end px-4">
+                        <input type="text" id="cvcInput" class="w-16 h-8 bg-white text-black text-center font-bold"
+                            maxlength="3" placeholder="123">
+                    </div>
+
+                    <button onclick="processOrder()"
+                        class="w-full bg-accent-volt text-black font-bold py-4 hover:bg-white transition uppercase tracking-widest">CONFIRM
+                        PAYMENT</button>
+                    <button onclick="document.getElementById('cardFlipper').classList.remove('flipped')"
+                        class="mt-4 text-xs text-center text-gray-500 hover:text-white">BACK</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Success Overlay -->
+    <div id="successOverlay" class="fixed inset-0 bg-black z-[60] hidden flex-col items-center justify-center">
+        <ion-icon name="checkmark-circle" class="text-9xl text-accent-volt mb-6 animate-pulse"></ion-icon>
+        <h2 class="text-4xl font-head text-white tracking-widest mb-2">ORDER VERIFIED</h2>
+        <p class="text-gray-500 font-mono tracking-widest">REDIRECTING TO LOBBY...</p>
+    </div>
+
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script>
+        const cartItems = document.getElementById('cartItems');
+        let cart = window.Nexus.getCart();
+
+        function renderCart() {
+            cart = window.Nexus.getCart();
+            if (cart.length === 0) {
+                cartItems.innerHTML = '<div class="text-center py-20 text-gray-600 font-mono border border-dashed border-gray-800">CART DATA EMPTY</div>';
+                updateSummary(0);
+                return;
+            }
+
+            let subtotal = 0;
+            cartItems.innerHTML = cart.map((item) => {
+                const totalItemPrice = item.price * item.quantity;
+                subtotal += totalItemPrice;
+
+                return `
+                    <div class="bg-gunmetal p-6 border border-gray-800 flex items-center justify-between group hover:border-accent-volt transition">
+                        <div class="flex items-center">
+                            <div class="w-24 h-24 bg-black/30 border border-gray-800 p-2 mr-6">
+                                <img src="${item.image}" class="w-full h-full object-contain">
+                            </div>
+                            <div>
+                                <h3 class="font-bold text-lg tracking-widest uppercase mb-1">${item.name}</h3>
+                                <p class="text-gray-500 text-xs font-mono uppercase mb-4">${item.brand}</p>
+                                <div class="text-accent-volt font-mono font-bold">$${item.price}</div>
+                            </div>
+                        </div>
+
+                        <div class="flex items-center space-x-6">
+                            <!-- Quantity Controls -->
+                            <div class="flex items-center border border-gray-700 bg-black/20">
+                                <button onclick="updateQty(${item.id}, -1)" class="px-3 py-1 hover:bg-white hover:text-black transition">-</button>
+                                <span class="px-3 py-1 font-mono text-sm min-w-[30px] text-center">${item.quantity}</span>
+                                <button onclick="updateQty(${item.id}, 1)" class="px-3 py-1 hover:bg-white hover:text-black transition">+</button>
+                            </div>
+                            
+                            <div class="text-right min-w-[80px]">
+                                <div class="font-bold font-mono text-white">$${totalItemPrice.toFixed(2)}</div>
+                            </div>
+                        </div>
+                    </div>
+                `;
+            }).join('');
+
+            updateSummary(subtotal);
+        }
+
+        function updateQty(id, change) {
+            window.Nexus.updateCartQuantity(id, change);
+            renderCart();
+        }
+
+        function updateSummary(subtotal) {
+            const tax = subtotal * 0.05;
+            const total = subtotal + tax;
+
+            document.getElementById('summarySubtotal').textContent = "$" + subtotal.toFixed(2);
+            document.getElementById('summaryTax').textContent = "$" + tax.toFixed(2);
+            document.getElementById('summaryTotal').textContent = "$" + total.toFixed(2);
+        }
+
+        function openPayment() {
+            if (window.Nexus.getCart().length === 0) return alert('Cart Empty');
+            document.getElementById('paymentModal').style.display = 'flex';
+        }
+
+        function closeModal() {
+            document.getElementById('paymentModal').style.display = 'none';
+        }
+
+        function processOrder() {
+            const cvc = document.getElementById('cvcInput').value;
+            if (cvc.length < 3) return alert('INVALID SECURITY CODE');
+
+            // Success Flow
+            document.getElementById('paymentModal').style.display = 'none';
+            const overlay = document.getElementById('successOverlay');
+            overlay.style.display = 'flex';
+
+            window.Nexus.clearCart();
+
+            setTimeout(() => {
+                window.location.href = 'index.html';
+            }, 3000);
+        }
+
+        renderCart();
+    </script>
+</body>
+
+</html>

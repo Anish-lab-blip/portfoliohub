@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Library | Horizon University</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="style.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        regal: '#4c1d95',
+                        gold: '#fbbf24',
+                    },
+                    fontFamily: {
+                        serif: ['Merriweather', 'serif'],
+                        sans: ['Source Sans Pro', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+
+<body class="bg-gray-50 flex flex-col min-h-screen">
+
+    <!-- Sticky Apply Button -->
+    <a href="./admissions.html" class="btn-apply-sticky shadow-2xl">APPLY NOW</a>
+
+    <!-- Navigation -->
+    <nav class="bg-white shadow-md relative z-50">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="flex justify-between items-center h-24">
+                <a href="./index.html" class="flex items-center gap-4 group">
+                    <div
+                        class="w-12 h-12 bg-regal text-gold flex items-center justify-center font-serif text-3xl font-black rounded-sm shadow-sm group-hover:scale-105 transition">
+                        H</div>
+                    <div class="leading-tight">
+                        <span
+                            class="block text-2xl font-serif font-black text-regal uppercase tracking-wide">Horizon</span>
+                        <span
+                            class="block text-xs font-sans font-bold text-gray-500 uppercase tracking-[0.2em]">University</span>
+                    </div>
+                </a>
+                <div class="hidden lg:flex items-center space-x-8 h-full">
+                    <span class="text-gray-400 italic">University Libraries System</span>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Search -->
+    <header class="bg-regal text-white py-24 text-center px-6">
+        <h1 class="text-4xl font-serif font-bold mb-8">Search the Archives</h1>
+        <div
+            class="max-w-2xl mx-auto bg-white rounded-full p-2 flex shadow-2xl transform hover:scale-105 transition duration-300">
+            <input type="text" placeholder="Search for books, articles, journals, and media..."
+                class="flex-grow px-6 py-3 rounded-l-full text-gray-900 focus:outline-none">
+            <button
+                class="bg-gold text-regal font-bold px-8 py-3 rounded-full hover:bg-gray-100 transition">Search</button>
+        </div>
+        <p class="mt-6 text-sm text-blue-200">Access to over 14 million physical volumes and digital assets.</p>
+    </header>
+
+    <main class="max-w-7xl mx-auto px-6 py-16">
+
+        <!-- Quick Links -->
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-6 mb-16">
+            <a href="#"
+                class="bg-white p-6 rounded shadow-sm text-center hover:shadow-lg transition border-t-4 border-gold">
+                <span class="text-3xl mb-2 block">📖</span>
+                <span class="font-bold text-regal">Course Reserves</span>
+            </a>
+            <a href="#"
+                class="bg-white p-6 rounded shadow-sm text-center hover:shadow-lg transition border-t-4 border-regal">
+                <span class="text-3xl mb-2 block">🖥️</span>
+                <span class="font-bold text-regal">Book a Study Room</span>
+            </a>
+            <a href="#"
+                class="bg-white p-6 rounded shadow-sm text-center hover:shadow-lg transition border-t-4 border-regal">
+                <span class="text-3xl mb-2 block">💻</span>
+                <span class="font-bold text-regal">Databases</span>
+            </a>
+            <a href="#"
+                class="bg-white p-6 rounded shadow-sm text-center hover:shadow-lg transition border-t-4 border-gold">
+                <span class="text-3xl mb-2 block">🙋</span>
+                <span class="font-bold text-regal">Ask a Librarian</span>
+            </a>
+        </div>
+
+        <!-- Hours -->
+        <div class="bg-gray-50 rounded-sm p-8 flex flex-col md:flex-row justify-between items-center">
+            <div>
+                <h2 class="text-2xl font-serif font-bold text-regal mb-2">Today's Hours</h2>
+                <div class="space-y-1 text-sm text-gray-600">
+                    <p><span class="font-bold">Main Library:</span> Open 24 Hours</p>
+                    <p><span class="font-bold">Science Library:</span> 8:00 AM - 12:00 AM</p>
+                    <p><span class="font-bold">Law Library:</span> 7:00 AM - 10:00 PM</p>
+                </div>
+            </div>
+            <img src="https://images.unsplash.com/photo-1507842217121-9e96e44336f1?auto=format&fit=crop&q=80"
+                class="w-64 h-32 object-cover rounded shadow-md mt-6 md:mt-0">
+        </div>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white pt-20 pb-10 mt-auto border-t-[6px] border-gold">
+        <div class="max-w-7xl mx-auto px-6 text-center text-sm text-gray-500">
+            <p>© 2026 Horizon University. All rights reserved.</p>
+        </div>
+    </footer>
+
+</body>
+
+</html>

@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Velocity Fitness | Redefine Limits</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="./style.css">
+    <style>
+        .hero-bg {
+            background-image: linear-gradient(rgba(10, 25, 47, 0.8), rgba(10, 25, 47, 0.8)), url('https://images.unsplash.com/photo-1534438327276-14e5300c3a48?auto=format&fit=crop&q=80');
+            background-size: cover;
+            background-position: center;
+        }
+    </style>
+</head>
+
+<body class="bg-slate-900 text-slate-300 font-sans antialiased">
+
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 bg-slate-900/90 backdrop-blur-md border-b border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                <div class="flex-shrink-0">
+                    <a href="./index.html" class="text-2xl font-bold text-teal-400 tracking-wider">VELOCITY</a>
+                </div>
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-baseline space-x-8">
+                        <a href="./index.html"
+                            class="nav-link text-white px-3 py-2 rounded-md text-sm font-medium">Home</a>
+                        <a href="./classes.html"
+                            class="nav-link text-slate-300 hover:text-teal-400 px-3 py-2 rounded-md text-sm font-medium">Classes</a>
+                        <a href="./membership.html"
+                            class="nav-link text-slate-300 hover:text-teal-400 px-3 py-2 rounded-md text-sm font-medium">Membership</a>
+                        <a href="./contact.html"
+                            class="nav-link text-slate-300 hover:text-teal-400 px-3 py-2 rounded-md text-sm font-medium">Contact</a>
+                    </div>
+                </div>
+                <div>
+                    <a href="./membership.html"
+                        class="btn-hover bg-teal-400 text-slate-900 px-6 py-2 rounded-full font-bold text-sm">Join
+                        Now</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="hero-bg h-screen flex items-center justify-center text-center px-4">
+        <div class="fade-in-up">
+            <h1 class="text-5xl md:text-7xl font-extrabold text-white mb-6 tracking-tight">
+                REDEFINE YOUR <span class="text-teal-400">LIMITS</span>
+            </h1>
+            <p class="text-xl md:text-2xl mb-10 max-w-2xl mx-auto text-slate-300">
+                Elite training, state-of-the-art equipment, and a community that pushes you further.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="./membership.html"
+                    class="btn-hover bg-teal-400 text-slate-900 px-8 py-4 rounded-full font-bold text-lg">Start Your
+                    Journey</a>
+                <a href="./classes.html"
+                    class="btn-hover border-2 border-teal-400 text-teal-400 px-8 py-4 rounded-full font-bold text-lg hover:bg-teal-400 hover:text-slate-900 transition-colors">View
+                    Classes</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Features Grid -->
+    <section class="py-20 bg-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Feature 1 -->
+                <div
+                    class="bg-slate-900 p-8 rounded-2xl hover:-translate-y-2 transition-transform duration-300 border border-slate-700">
+                    <div class="text-teal-400 text-4xl mb-4">💪</div>
+                    <h3 class="text-2xl font-bold text-white mb-4">Pro Equipment</h3>
+                    <p>Olympic-grade racks, free weights up to 150lbs, and premium cardio machines.</p>
+                </div>
+                <!-- Feature 2 -->
+                <div
+                    class="bg-slate-900 p-8 rounded-2xl hover:-translate-y-2 transition-transform duration-300 border border-slate-700">
+                    <div class="text-teal-400 text-4xl mb-4">🧘</div>
+                    <h3 class="text-2xl font-bold text-white mb-4">Expert Trainers</h3>
+                    <p>Certified coaches personalized to your goals, from hypertrophy to mobility.</p>
+                </div>
+                <!-- Feature 3 -->
+                <div
+                    class="bg-slate-900 p-8 rounded-2xl hover:-translate-y-2 transition-transform duration-300 border border-slate-700">
+                    <div class="text-teal-400 text-4xl mb-4">⚡</div>
+                    <h3 class="text-2xl font-bold text-white mb-4">24/7 Access</h3>
+                    <p>Train on your schedule. Keycard access ensures you never miss a workout.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-slate-900 py-12 border-t border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 text-center">
+            <p class="text-slate-500">© 2026 Velocity Fitness. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="/js/return-home.js"></script>
+</body>
+
+</html>

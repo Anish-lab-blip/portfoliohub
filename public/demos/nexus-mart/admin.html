@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard | Nexus Mart</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="data.js"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="bg-matte text-white min-h-screen font-body">
+
+    <!-- Mission Control Header -->
+    <nav class="border-b border-glass-border bg-gunmetal/90 backdrop-blur fixed w-full z-50">
+        <div class="max-w-7xl mx-auto px-6 h-16 flex justify-between items-center">
+            <div class="font-head text-xl tracking-widest text-white">NEXUS<span class="text-accent-volt">_ADMIN</span>
+            </div>
+            <div class="flex items-center space-x-6 text-xs font-mono tracking-widest">
+                <a href="index.html" class="text-gray-400 hover:text-white transition">LIVE_STORE</a>
+                <a href="login.html" class="text-red-500 hover:text-red-400 transition">TERMINATE_SESSION</a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="max-w-7xl mx-auto px-6 pt-24 pb-12">
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+
+            <!-- Add Product Panel -->
+            <div class="lg:col-span-1">
+                <div class="p-6 bg-gunmetal border border-glass-border relative">
+                    <div
+                        class="absolute top-0 right-0 p-2 text-[10px] text-accent-volt font-mono border-l border-b border-glass-border">
+                        INPUT_TERMINAL</div>
+
+                    <h2 class="font-head text-lg mb-6 flex items-center">
+                        <ion-icon name="add-circle-outline" class="mr-2 text-accent-volt"></ion-icon> NEW ASSET
+                    </h2>
+
+                    <form onsubmit="handleAddProduct(event)" class="space-y-4">
+                        <div>
+                            <label class="block text-[10px] font-mono text-gray-500 uppercase mb-1">Asset Name</label>
+                            <input type="text" id="pName"
+                                class="w-full p-3 bg-black/40 border border-gray-700 focus:border-accent-volt text-sm"
+                                required>
+                        </div>
+                        <div class="grid grid-cols-2 gap-4">
+                            <div>
+                                <label class="block text-[10px] font-mono text-gray-500 uppercase mb-1">Value
+                                    (Credits)</label>
+                                <input type="number" step="0.01" id="pPrice"
+                                    class="w-full p-3 bg-black/40 border border-gray-700 focus:border-accent-volt text-sm"
+                                    required>
+                            </div>
+                            <div>
+                                <label
+                                    class="block text-[10px] font-mono text-gray-500 uppercase mb-1">Classification</label>
+                                <select id="pCat"
+                                    class="w-full p-3 bg-black/40 border border-gray-700 focus:border-accent-volt text-sm">
+                                    <option>Electronics</option>
+                                    <option>Fashion</option>
+                                    <option>Cybernetics</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div>
+                            <label class="block text-[10px] font-mono text-gray-500 uppercase mb-1">Visual Data
+                                (URL)</label>
+                            <input type="text" id="pImg"
+                                class="w-full p-3 bg-black/40 border border-gray-700 focus:border-accent-volt text-sm"
+                                required oninput="updatePreview(this.value)">
+                        </div>
+
+                        <!-- Image Preview Box -->
+                        <div id="imgPreview"
+                            class="h-32 w-full bg-black/20 border border-dashed border-gray-800 flex items-center justify-center overflow-hidden mb-4">
+                            <span class="text-xs text-gray-600 font-mono">NO SIGNAL</span>
+                        </div>
+
+                        <div>
+                            <label class="block text-[10px] font-mono text-gray-500 uppercase mb-1">Tech Specs</label>
+                            <textarea id="pDesc"
+                                class="w-full p-3 bg-black/40 border border-gray-700 focus:border-accent-volt text-sm"
+                                rows="3"></textarea>
+                        </div>
+
+                        <button type="submit" class="w-full btn-volt py-3 tracking-widest text-xs">INITIALIZE
+                            ASSET</button>
+                    </form>
+                </div>
+            </div>
+
+            <!-- Inventory List -->
+            <div class="lg:col-span-2">
+                <div class="p-6 bg-gunmetal border border-glass-border min-h-[600px] relative">
+                    <div
+                        class="absolute top-0 right-0 p-2 text-[10px] text-blue-400 font-mono border-l border-b border-glass-border">
+                        DATABASE_VIEW</div>
+
+                    <h2 class="font-head text-lg mb-6 flex items-center">
+                        <ion-icon name="server-outline" class="mr-2 text-blue-400"></ion-icon> GLOBAL INVENTORY
+                    </h2>
+
+                    <div class="overflow-x-auto">
+                        <table class="w-full text-left border-collapse">
+                            <thead>
+                                <tr class="text-[10px] font-mono text-gray-500 uppercase border-b border-gray-800">
+                                    <th class="p-3">Preview</th>
+                                    <th class="p-3">Asset Designation</th>
+                                    <th class="p-3">Class</th>
+                                    <th class="p-3">Value</th>
+                                    <th class="p-3 text-right">Action</th>
+                                </tr>
+                            </thead>
+                            <tbody id="inventoryTable" class="text-sm font-mono text-gray-300">
+                                <!-- JS Populated -->
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script>
+        function updatePreview(url) {
+            const box = document.getElementById('imgPreview');
+            if (url) {
+                box.innerHTML = `<img src="${url}" class="w-full h-full object-cover">`;
+            } else {
+                box.innerHTML = `<span class="text-xs text-gray-600 font-mono">NO SIGNAL</span>`;
+            }
+        }
+
+        function renderInventory() {
+            const products = window.Nexus.getProducts();
+            const tbody = document.getElementById('inventoryTable');
+            tbody.innerHTML = products.map(p => `
+                <tr class="border-b border-gray-800 hover:bg-white/5 transition group">
+                    <td class="p-3">
+                        <div class="w-10 h-10 bg-black/50 p-1 border border-gray-700">
+                            <img src="${p.image}" class="w-full h-full object-contain">
+                        </div>
+                    </td>
+                    <td class="p-3 font-bold text-white group-hover:text-accent-volt transition">${p.name}</td>
+                    <td class="p-3 text-xs uppercase text-gray-500">${p.category}</td>
+                    <td class="p-3 text-accent-volt">$${p.price}</td>
+                    <td class="p-3 text-right">
+                        <button onclick="deleteAsset(${p.id})" class="text-gray-600 hover:text-red-500 transition">
+                            <ion-icon name="trash-outline" class="text-lg"></ion-icon>
+                        </button>
+                    </td>
+                </tr>
+            `).join('');
+        }
+
+        function handleAddProduct(e) {
+            e.preventDefault();
+            const newProduct = {
+                name: document.getElementById('pName').value,
+                price: parseFloat(document.getElementById('pPrice').value),
+                category: document.getElementById('pCat').value,
+                image: document.getElementById('pImg').value,
+                description: document.getElementById('pDesc').value,
+                brand: "Nexus Labs"
+            };
+
+            window.Nexus.addProduct(newProduct);
+            // Flash Success
+            const btn = e.target.querySelector('button');
+            const originalText = btn.innerText;
+            btn.innerText = "UPLOAD COMPLETE";
+            btn.style.background = "#fff";
+            setTimeout(() => {
+                btn.innerText = originalText;
+                btn.style.background = "";
+            }, 1000);
+
+            e.target.reset();
+            updatePreview('');
+            renderInventory();
+        }
+
+        window.deleteAsset = (id) => {
+            if (confirm('CONFIRM DELETION: Does this asset require purging?')) {
+                window.Nexus.deleteProduct(id);
+                renderInventory();
+            }
+        };
+
+        renderInventory();
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Details | Nexus Mart</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="data.js"></script>
+    <link rel="stylesheet" href="style.css">
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+</head>
+
+<body class="bg-matte text-white">
+
+    <!-- Nav -->
+    <nav class="fixed top-0 w-full z-50 px-6 py-4 flex justify-between items-center glass-panel">
+        <a href="index.html" class="logo-text text-xl font-bold tracking-tighter">NEXUS<span
+                class="logo-accent">MART</span></a>
+        <div class="flex items-center space-x-6">
+            <a href="shop.html"
+                class="text-gray-400 hover:text-white text-xs font-bold tracking-widest flex items-center">
+                <ion-icon name="arrow-back-outline" class="mr-2"></ion-icon> BACK
+            </a>
+            <a href="cart.html" class="flex items-center text-sm font-bold relative">
+                <ion-icon name="cart-outline" class="text-xl mr-2"></ion-icon>
+                <span id="cartCount" class="text-accent-volt">0</span>
+            </a>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <div class="pt-24 pb-12 px-6 container mx-auto">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12" id="productContainer">
+            <!-- JS Rendered -->
+        </div>
+
+        <!-- Reviews Section -->
+        <div class="mt-16 border-t border-gray-800 pt-12 max-w-2xl">
+            <h3 class="text-xl font-head tracking-widest mb-8">USER_FEEDBACK</h3>
+
+            <div class="mb-8">
+                <textarea id="reviewInput"
+                    class="w-full p-4 bg-gunmetal border border-gray-700 text-white focus:border-accent-volt" rows="3"
+                    placeholder="TRANSMIT YOUR EXPERIENCE..."></textarea>
+                <button onclick="addReview()"
+                    class="mt-4 px-6 py-2 border border-accent-volt text-accent-volt text-xs font-bold uppercase tracking-widest hover:bg-accent-volt hover:text-black transition">POST
+                    TRANSMISSION</button>
+            </div>
+
+            <div id="reviewsList" class="space-y-6">
+                <div class="border-b border-gray-800 pb-4">
+                    <div class="flex items-center mb-2">
+                        <div class="text-accent-volt text-xs mr-4 font-mono">★★★★★</div>
+                        <span class="font-bold text-sm tracking-wide text-gray-300">TECH_ENTHUSIAST</span>
+                    </div>
+                    <p class="text-gray-500 text-sm font-mono">ABSOLUTELY MIND-BLOWING QUALITY. THE HOLOGRAPHIC FINISH
+                        IS UNREAL.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const params = new URLSearchParams(window.location.search);
+        const pid = params.get('id');
+        const product = window.Nexus.getProduct(pid);
+
+        document.getElementById('cartCount').textContent = window.Nexus.getCart().length;
+
+        if (product) {
+            const container = document.getElementById('productContainer');
+            container.innerHTML = `
+                <div class="flex items-center justify-center p-12 bg-gunmetal border border-gray-800 relative group overflow-hidden">
+                    <div class="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre.png')] opacity-10"></div>
+                    <img src="${product.image}" class="w-full max-w-md object-contain z-10 product-img-anim drop-shadow-2xl grayscale group-hover:grayscale-0 transition duration-700">
+                </div>
+                
+                <div class="flex flex-col justify-center">
+                    <div class="text-accent-volt font-mono text-sm tracking-widest mb-2 uppercase">Ident Code: ${product.id}00X // ${product.brand}</div>
+                    <h1 class="text-5xl font-head mb-6 leading-none">${product.name}</h1>
+                    
+                    <div class="text-3xl font-mono text-white mb-8 border-l-4 border-accent-volt pl-4">$${product.price}</div>
+                    
+                    <div class="text-gray-400 font-mono text-sm leading-relaxed mb-10 text-justify">
+                        ${product.description || "NO DATA AVAILABLE FOR THIS UNIT."}
+                        <br><br>
+                        SPECIFICATIONS: <br>
+                        > MIL-SPEC DURABILITY <br>
+                        > ZERO LATENCY <br>
+                        > GLOBAL WARRANTY
+                    </div>
+
+                    <div class="flex space-x-4">
+                        <button onclick="handleAddToCart()" class="flex-1 btn-volt py-4 tracking-widest text-center shadow-[0_0_20px_rgba(204,255,0,0.2)]">
+                            ADD TO CART
+                        </button>
+                    </div>
+                </div>
+            `;
+
+            gsap.from(".product-img-anim", { scale: 0.9, opacity: 0, duration: 1, ease: "power2.out" });
+
+        } else {
+            document.body.innerHTML = "<div class='h-screen flex items-center justify-center text-red-500 font-mono'>ERROR: PRODUCT NOT FOUND</div>";
+        }
+
+        function handleAddToCart() {
+            window.Nexus.addToCart(product);
+            // Simple visual feedback
+            const btn = document.querySelector('.btn-volt');
+            const originalText = btn.innerText;
+            btn.innerText = "UNIT SECURED";
+            btn.style.backgroundColor = "white";
+            setTimeout(() => {
+                btn.innerText = originalText;
+                btn.style.backgroundColor = "";
+            }, 1000);
+
+            document.getElementById('cartCount').textContent = window.Nexus.getCart().length;
+        }
+
+        function addReview() {
+            const text = document.getElementById('reviewInput').value;
+            if (!text) return;
+
+            const list = document.getElementById('reviewsList');
+            const newReview = document.createElement('div');
+            newReview.className = "border-b border-gray-800 pb-4 gsap-fade-in";
+            newReview.innerHTML = `
+                <div class="flex items-center mb-2">
+                    <div class="text-accent-volt text-xs mr-4 font-mono">★★★★★</div>
+                    <span class="font-bold text-sm tracking-wide text-gray-300">USER_ID_YOU</span>
+                </div>
+                <p class="text-gray-500 text-sm font-mono uppercase">${text}</p>
+            `;
+            list.prepend(newReview);
+            document.getElementById('reviewInput').value = '';
+
+            gsap.to(newReview, { opacity: 1, duration: 0.5 });
+        }
+    </script>
+</body>

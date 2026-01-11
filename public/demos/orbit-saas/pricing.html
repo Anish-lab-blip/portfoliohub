@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Orbit | Pricing</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="style.css">
+    <script>
+        function togglePricing() {
+            const isMonthly = document.getElementById('priceToggle').checked;
+            document.getElementById('pricePro').innerText = isMonthly ? '$120' : '$12';
+            document.getElementById('periodPro').innerText = isMonthly ? '/year' : '/mo';
+        }
+    </script>
+</head>
+
+<body class="bg-white">
+
+    <!-- Navbar -->
+    <nav class="fixed w-full z-50 bg-white/80 backdrop-blur-md border-b border-slate-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <div class="flex items-center">
+                    <a href="./index.html" class="flex items-center space-x-2">
+                        <div
+                            class="w-8 h-8 bg-indigo-600 rounded-lg flex items-center justify-center text-white font-bold">
+                            O</div>
+                        <span class="font-bold text-xl tracking-tight text-slate-900">Orbit</span>
+                    </a>
+                </div>
+                <div class="hidden md:flex space-x-8">
+                    <a href="./index.html" class="nav-link">Home</a>
+                    <a href="./features.html" class="nav-link">Features</a>
+                    <a href="./pricing.html" class="nav-link active">Pricing</a>
+                </div>
+                <div>
+                    <a href="./contact.html"
+                        class="px-5 py-2.5 rounded-full bg-slate-900 text-white text-sm font-semibold hover:bg-slate-800 transition">Get
+                        Demo</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <div class="pt-40 pb-20 px-4 text-center bg-slate-50">
+        <h1 class="text-4xl md:text-5xl font-extrabold text-slate-900 mb-6">Simple, transparent pricing.</h1>
+        <p class="text-xl text-slate-600 mb-10">No credit card required to start.</p>
+
+        <!-- Toggle -->
+        <div class="flex justify-center items-center gap-4 mb-16">
+            <span class="text-sm font-bold text-slate-600">Monthly</span>
+            <label class="relative inline-flex items-center cursor-pointer">
+                <input type="checkbox" id="priceToggle" class="sr-only peer" onchange="togglePricing()">
+                <div
+                    class="w-11 h-6 bg-slate-200 peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-indigo-600">
+                </div>
+            </label>
+            <span class="text-sm font-bold text-slate-600">Yearly</span>
+        </div>
+    </div>
+
+    <!-- Pricing Cards -->
+    <div class="max-w-7xl mx-auto px-4 -mt-10 pb-32">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+
+            <!-- Free -->
+            <div class="bento-card flex flex-col">
+                <h3 class="text-xl font-bold mb-2">Starter</h3>
+                <p class="text-slate-500 mb-6 text-sm">For individuals just starting out.</p>
+                <div class="text-4xl font-extrabold mb-6">$0</div>
+                <ul class="space-y-4 mb-8 flex-1 text-sm text-slate-600">
+                    <li class="flex items-center gap-2"><span class="text-indigo-500">✓</span> 3 Projects</li>
+                    <li class="flex items-center gap-2"><span class="text-indigo-500">✓</span> Basic Analytics</li>
+                    <li class="flex items-center gap-2"><span class="text-indigo-500">✓</span> Community Support</li>
+                </ul>
+                <a href="./contact.html"
+                    class="w-full py-3 rounded-xl border border-slate-200 text-center font-bold text-slate-700 hover:bg-slate-50 transition">Get
+                    Started</a>
+            </div>
+
+            <!-- Pro -->
+            <div class="bento-card flex flex-col border-2 border-indigo-500 relative shadow-2xl scale-105 z-10">
+                <div
+                    class="absolute top-0 right-0 bg-indigo-500 text-white text-xs font-bold px-3 py-1 rounded-bl-lg rounded-tr-lg">
+                    POPULAR</div>
+                <h3 class="text-xl font-bold mb-2 text-indigo-600">Pro</h3>
+                <p class="text-slate-500 mb-6 text-sm">For growing teams.</p>
+                <div class="flex items-baseline gap-1 mb-6">
+                    <span id="pricePro" class="text-4xl font-extrabold">$12</span>
+                    <span id="periodPro" class="text-slate-500">/mo</span>
+                </div>
+                <ul class="space-y-4 mb-8 flex-1 text-sm text-slate-600">
+                    <li class="flex items-center gap-2"><span class="text-indigo-500">✓</span> Unlimited Projects</li>
+                    <li class="flex items-center gap-2"><span class="text-indigo-500">✓</span> Advanced AI</li>
+                    <li class="flex items-center gap-2"><span class="text-indigo-500">✓</span> Priority Support</li>
+                </ul>
+                <a href="./contact.html"
+                    class="w-full py-3 rounded-xl bg-indigo-600 text-center font-bold text-white hover:bg-indigo-700 transition shadow-lg">Start
+                    Trial</a>
+            </div>
+
+            <!-- Business -->
+            <div class="bento-card flex flex-col">
+                <h3 class="text-xl font-bold mb-2">Business</h3>
+                <p class="text-slate-500 mb-6 text-sm">For large organizations.</p>
+                <div class="text-4xl font-extrabold mb-6">Custom</div>
+                <ul class="space-y-4 mb-8 flex-1 text-sm text-slate-600">
+                    <li class="flex items-center gap-2"><span class="text-indigo-500">✓</span> SSO & Security</li>
+                    <li class="flex items-center gap-2"><span class="text-indigo-500">✓</span> Dedicated Manager</li>
+                    <li class="flex items-center gap-2"><span class="text-indigo-500">✓</span> SLA Guarantee</li>
+                </ul>
+                <a href="./contact.html"
+                    class="w-full py-3 rounded-xl border border-slate-200 text-center font-bold text-slate-700 hover:bg-slate-50 transition">Contact
+                    Sales</a>
+            </div>
+
+        </div>
+    </div>
+
+</body>
+
+</html>

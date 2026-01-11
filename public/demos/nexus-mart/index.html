@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nexus Mart | Future Commerce</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="bg-black text-white">
+
+    <!-- Nav -->
+    <nav class="fixed top-0 w-full z-50 px-6 py-4 flex justify-between items-center glass-panel">
+        <div class="logo-text text-xl font-bold tracking-tighter">NEXUS<span class="logo-accent">MART</span></div>
+        <div class="hidden md:flex space-x-8 text-sm font-bold tracking-widest text-gray-400">
+            <a href="shop.html" class="hover:text-white transition">SHOP</a>
+            <a href="cart.html" class="hover:text-white transition">CART</a>
+            <a href="login.html" class="hover:text-white transition">ACCOUNT</a>
+        </div>
+        <a href="shop.html" class="btn-volt text-xs">Enter Store</a>
+    </nav>
+
+    <!-- Marquee -->
+    <div
+        class="marquee-container fixed top-16 z-40 transform -rotate-1 origin-left opacity-90 mix-blend-difference pointer-events-none">
+        <div class="marquee-content">
+            / NEXT GEN TECH AVAILABLE NOW / QUANTUM PROCESSORS IN STOCK / HOLOGRAPHIC DISPLAYS / 24HR DRONE DELIVERY /
+            NEXT GEN TECH AVAILABLE NOW / QUANTUM PROCESSORS IN STOCK / HOLOGRAPHIC DISPLAYS / 24HR DRONE DELIVERY
+        </div>
+    </div>
+
+    <!-- Hero -->
+    <header class="h-screen flex flex-col md:flex-row items-center justify-center relative overflow-hidden px-6 pt-20">
+        <!-- Background Elements -->
+        <div
+            class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-gray-900 rounded-full blur-[120px] opacity-50 -z-10">
+        </div>
+
+        <div class="z-10 text-center md:text-left md:w-1/2">
+            <h4 class="text-accent-volt mb-4 text-xs tracking-[0.3em]">EST. 2099</h4>
+            <h1 class="text-6xl md:text-8xl font-bold leading-none mb-6 mix-blend-overlay gs-reveal">
+                REDEFINE<br>REALITY.</h1>
+            <p class="text-gray-400 max-w-md mb-8 gs-reveal">Experience the bleeding edge of consumer electronics.
+                Sourced from the future, delivered today.</p>
+            <div class="gs-reveal">
+                <a href="shop.html" class="btn-volt inline-block px-8 py-4 text-sm tracking-widest">Shop The
+                    Collection</a>
+            </div>
+        </div>
+
+        <div class="md:w-1/2 h-full flex items-center justify-center relative">
+            <!-- 3D Floating Product -->
+            <img src="https://images.unsplash.com/photo-1616410011236-7a4211f90103?auto=format&fit=crop&q=80"
+                class="w-[80%] md:w-[600px] object-contain drop-shadow-2xl floating-anim z-20 grayscale hover:grayscale-0 transition duration-700"
+                alt="Cyber Headset">
+            <!-- Circle Decor -->
+            <div class="absolute border border-gray-700 rounded-full w-[400px] h-[400px] animate-spin-slow"></div>
+            <div
+                class="absolute border border-dashed border-gray-600 rounded-full w-[500px] h-[500px] animate-reverse-spin">
+            </div>
+        </div>
+    </header>
+
+    <!-- Featured Drops -->
+    <section class="py-20 border-t border-gray-800">
+        <div class="container mx-auto px-6">
+            <div class="flex justify-between items-end mb-12">
+                <h2 class="text-3xl">Featured Drops</h2>
+                <a href="shop.html" class="text-accent-volt text-xs tracking-widest hover:underline">VIEW ALL -></a>
+            </div>
+
+            <div class="h-scroll flex space-x-6 pb-8">
+                <!-- Drop 1 -->
+                <div
+                    class="min-w-[300px] bg-gunmetal border border-gray-800 p-6 relative group cursor-pointer hover:border-accent-volt transition duration-300">
+                    <div class="absolute top-4 right-4 text-xs font-mono text-gray-500">01</div>
+                    <img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&q=80"
+                        class="h-40 w-full object-contain mb-6 grayscale group-hover:grayscale-0 transition">
+                    <h3 class="text-xl mb-1">Holograph Sneakers</h3>
+                    <p class="text-gray-500 text-sm mb-4">Adaptive Fit / NikeX</p>
+                    <span class="text-accent-volt font-mono">$129.00</span>
+                </div>
+                <!-- Drop 2 -->
+                <div
+                    class="min-w-[300px] bg-gunmetal border border-gray-800 p-6 relative group cursor-pointer hover:border-accent-volt transition duration-300">
+                    <div class="absolute top-4 right-4 text-xs font-mono text-gray-500">02</div>
+                    <img src="https://images.unsplash.com/photo-1550009158-9ebf69173e03?auto=format&fit=crop&q=80"
+                        class="h-40 w-full object-contain mb-6 grayscale group-hover:grayscale-0 transition">
+                    <h3 class="text-xl mb-1">Neural Interface</h3>
+                    <p class="text-gray-500 text-sm mb-4">Direct Link / Cyberdyne</p>
+                    <span class="text-accent-volt font-mono">$899.00</span>
+                </div>
+                <!-- Drop 3 -->
+                <div
+                    class="min-w-[300px] bg-gunmetal border border-gray-800 p-6 relative group cursor-pointer hover:border-accent-volt transition duration-300">
+                    <div class="absolute top-4 right-4 text-xs font-mono text-gray-500">03</div>
+                    <img src="https://images.unsplash.com/photo-1608231387042-66d1773070a5?auto=format&fit=crop&q=80"
+                        class="h-40 w-full object-contain mb-6 grayscale group-hover:grayscale-0 transition">
+                    <h3 class="text-xl mb-1">Quantum Deck</h3>
+                    <p class="text-gray-500 text-sm mb-4">Portable / Valve</p>
+                    <span class="text-accent-volt font-mono">$649.00</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="border-t border-gray-800 py-12 text-center text-gray-600 text-sm font-mono">
+        <p>NEXUS MART © 2099</p>
+        <p>DESIGNED FOR THE BOLD</p>
+    </footer>
+
+    <style>
+        .floating-anim {
+            animation: float 6s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0% {
+                transform: translateY(0px);
+            }
+
+            50% {
+                transform: translateY(-20px);
+            }
+
+            100% {
+                transform: translateY(0px);
+            }
+        }
+
+        .animate-spin-slow {
+            animation: spin 20s linear infinite;
+        }
+
+        .animate-reverse-spin {
+            animation: spin 25s linear infinite reverse;
+        }
+
+        @keyframes spin {
+            from {
+                transform: rotate(0deg);
+            }
+
+            to {
+                transform: rotate(360deg);
+            }
+        }
+    </style>
+
+    <script>
+        gsap.from(".gs-reveal", {
+            y: 50,
+            opacity: 0,
+            duration: 1,
+            stagger: 0.2,
+            ease: "power3.out",
+            delay: 0.5
+        });
+    </script>
+    <script src="/js/return-home.js"></script>
+</body>
+
+</html>

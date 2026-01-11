@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact & Directory | Horizon University</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="style.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        regal: '#4c1d95',
+                        gold: '#fbbf24',
+                    },
+                    fontFamily: {
+                        serif: ['Merriweather', 'serif'],
+                        sans: ['Source Sans Pro', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+
+<body class="bg-gray-50 flex flex-col min-h-screen">
+
+    <!-- Sticky Apply Button -->
+    <a href="./admissions.html" class="btn-apply-sticky shadow-2xl">APPLY NOW</a>
+
+    <!-- Navigation -->
+    <nav class="bg-white shadow-md relative z-50">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="flex justify-between items-center h-24">
+                <a href="./index.html" class="flex items-center gap-4 group">
+                    <div
+                        class="w-12 h-12 bg-regal text-gold flex items-center justify-center font-serif text-3xl font-black rounded-sm shadow-sm group-hover:scale-105 transition">
+                        H</div>
+                    <div class="leading-tight">
+                        <span
+                            class="block text-2xl font-serif font-black text-regal uppercase tracking-wide">Horizon</span>
+                        <span
+                            class="block text-xs font-sans font-bold text-gray-500 uppercase tracking-[0.2em]">University</span>
+                    </div>
+                </a>
+                <div class="hidden lg:flex items-center space-x-8 h-full">
+                    <a href="./academics.html" class="font-bold text-gray-700 hover:text-regal">Academics</a>
+                    <a href="./admissions.html" class="font-bold text-gray-700 hover:text-regal">Admissions</a>
+                    <a href="./research.html" class="font-bold text-gray-700 hover:text-regal">Research</a>
+                    <a href="./campus-life.html" class="font-bold text-gray-700 hover:text-regal">Campus Life</a>
+                    <a href="./athletics.html" class="font-bold text-gray-700 hover:text-regal">Athletics</a>
+                    <a href="./about.html" class="font-bold text-gray-700 hover:text-regal">About</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Header -->
+    <header class="bg-regal text-white py-20 text-center">
+        <h1 class="text-5xl font-serif font-bold mb-4">Contact Us</h1>
+        <p class="text-xl text-blue-200 font-light max-w-2xl mx-auto">Visiting campus or need to get in touch? We're
+            here to help.</p>
+    </header>
+
+    <main class="max-w-7xl mx-auto px-6 py-16">
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+
+            <!-- Information -->
+            <div>
+                <h2 class="text-3xl font-serif font-bold text-gray-900 mb-8">General Inquiries</h2>
+                <div class="space-y-6 text-lg text-gray-600">
+                    <div class="flex items-start gap-4">
+                        <span class="text-2xl">📍</span>
+                        <p>
+                            <strong>Admissions Visitor Center</strong><br>
+                            123 University Blvd, Bldg 4<br>
+                            Cambridge, MA 02138
+                        </p>
+                    </div>
+                    <div class="flex items-start gap-4">
+                        <span class="text-2xl">📞</span>
+                        <p>
+                            <strong>Main Switchboard</strong><br>
+                            (617) 555-0199
+                        </p>
+                    </div>
+                    <div class="flex items-start gap-4">
+                        <span class="text-2xl">✉️</span>
+                        <p>
+                            <strong>Email</strong><br>
+                            admissions@horizon.edu<br>
+                            info@horizon.edu
+                        </p>
+                    </div>
+                </div>
+
+                <h2 class="text-3xl font-serif font-bold text-gray-900 mt-12 mb-6">Department Directory</h2>
+                <ul class="space-y-3">
+                    <li class="flex justify-between border-b border-gray-200 py-2">
+                        <span>Registrar</span>
+                        <a href="#" class="text-regal font-bold">registrar@horizon.edu</a>
+                    </li>
+                    <li class="flex justify-between border-b border-gray-200 py-2">
+                        <span>Financial Aid</span>
+                        <a href="#" class="text-regal font-bold">finaid@horizon.edu</a>
+                    </li>
+                    <li class="flex justify-between border-b border-gray-200 py-2">
+                        <span>Housing</span>
+                        <a href="#" class="text-regal font-bold">housing@horizon.edu</a>
+                    </li>
+                </ul>
+
+            </div>
+
+            <!-- Map -->
+            <div class="bg-gray-200 h-96 rounded-sm shadow-inner flex items-center justify-center">
+                <p class="text-gray-500 font-bold">Interactive Campus Map Loading...</p>
+                <!-- In a real scenario, this would be a Google Maps Embed -->
+            </div>
+
+        </div>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white pt-20 pb-10 mt-auto border-t-[6px] border-gold">
+        <div class="max-w-7xl mx-auto px-6 text-center text-sm text-gray-500">
+            <p>© 2026 Horizon University. All rights reserved.</p>
+        </div>
+    </footer>
+
+</body>
+
+</html>

@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Horizon University | Excellence in Education</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="style.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        regal: '#4c1d95',
+                        gold: '#fbbf24',
+                    },
+                    fontFamily: {
+                        serif: ['Merriweather', 'serif'],
+                        sans: ['Source Sans Pro', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-gray-50 flex flex-col min-h-screen">
+
+    <!-- Sticky Apply Button -->
+    <a href="./admissions.html" class="btn-apply-sticky shadow-2xl">APPLY NOW</a>
+
+    <!-- Top Bar -->
+    <div class="bg-regal text-white py-2 text-xs font-bold tracking-wider">
+        <div class="max-w-7xl mx-auto px-6 flex justify-between items-center">
+            <div class="hidden md:flex space-x-6">
+                <a href="./alumni.html" class="hover:text-gold transition">Alumni</a>
+                <a href="./portal.html" class="hover:text-gold transition">Student Portal</a>
+                <a href="./contact.html" class="hover:text-gold transition">Directory</a>
+            </div>
+            <div class="flex space-x-4">
+                <span class="text-gold">Next Open House: April 15th</span>
+                <a href="./library.html" class="hover:text-gold transition">Library</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Navigation (Mega Menu) -->
+    <nav class="bg-white shadow-md relative z-50">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="flex justify-between items-center h-24">
+                
+                <!-- Logo -->
+                <a href="./index.html" class="flex items-center gap-4 group">
+                    <div class="w-12 h-12 bg-regal text-gold flex items-center justify-center font-serif text-3xl font-black rounded-sm shadow-sm group-hover:scale-105 transition">H</div>
+                    <div class="leading-tight">
+                        <span class="block text-2xl font-serif font-black text-regal uppercase tracking-wide">Horizon</span>
+                        <span class="block text-xs font-sans font-bold text-gray-500 uppercase tracking-[0.2em]">University</span>
+                    </div>
+                </a>
+
+                <!-- Desktop Menu -->
+                <div class="hidden lg:flex items-center space-x-8 h-full">
+                    
+                    <!-- Academics Dropdown -->
+                    <div class="group h-full flex items-center">
+                        <a href="./academics.html" class="nav-link font-bold text-gray-700 hover:text-regal py-8">Academics</a>
+                        <div class="mega-menu absolute left-0 top-full w-full bg-white border-t-4 border-gold shadow-xl py-10">
+                            <div class="max-w-7xl mx-auto px-6 grid grid-cols-4 gap-8">
+                                <div>
+                                    <h4 class="font-serif text-regal font-bold mb-4 text-lg">Colleges</h4>
+                                    <ul class="space-y-2 text-sm text-gray-600">
+                                        <li><a href="./academics.html" class="hover:text-gold hover:underline">College of Arts & Sciences</a></li>
+                                        <li><a href="./academics.html" class="hover:text-gold hover:underline">School of Engineering</a></li>
+                                        <li><a href="./academics.html" class="hover:text-gold hover:underline">Business School</a></li>
+                                        <li><a href="./academics.html" class="hover:text-gold hover:underline">Medical School</a></li>
+                                    </ul>
+                                </div>
+                                <div>
+                                    <h4 class="font-serif text-regal font-bold mb-4 text-lg">Departments</h4>
+                                     <ul class="space-y-2 text-sm text-gray-600">
+                                        <li><a href="./cs-department.html" class="hover:text-gold hover:underline font-bold text-regal">Computer Science (New)</a></li>
+                                        <li><a href="./academics.html" class="hover:text-gold hover:underline">Psychology</a></li>
+                                        <li><a href="./academics.html" class="hover:text-gold hover:underline">Economics</a></li>
+                                        <li><a href="./academics.html" class="hover:text-gold hover:underline">History</a></li>
+                                    </ul>
+                                </div>
+                                <div class="col-span-2 bg-gray-50 p-6 rounded-lg flex gap-4">
+                                    <img src="https://images.unsplash.com/photo-1523050854058-8df90110c9f1?auto=format&fit=crop&q=80" class="w-1/2 object-cover rounded shadow-sm">
+                                    <div>
+                                        <h5 class="font-bold text-regal mb-2">Academic Excellence</h5>
+                                        <p class="text-sm text-gray-500 mb-4">Ranked #1 for Student Innovation 3 years in a row.</p>
+                                        <a href="./academics.html" class="text-xs font-bold text-gold uppercase tracking-widest hover:underline">Explore Programs &rarr;</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <a href="./admissions.html" class="font-bold text-gray-700 hover:text-regal">Admissions</a>
+                    <a href="./research.html" class="font-bold text-gray-700 hover:text-regal">Research</a>
+                    <a href="./campus-life.html" class="font-bold text-gray-700 hover:text-regal">Campus Life</a>
+                    <a href="./athletics.html" class="font-bold text-gray-700 hover:text-regal">Athletics</a>
+                    <a href="./about.html" class="font-bold text-gray-700 hover:text-regal">About</a>
+                </div>
+
+                <div class="lg:hidden">
+                    <button id="mobileMenuBtn" class="text-regal text-2xl">☰</button>
+                </div>
+
+            </div>
+        </div>
+        
+        <!-- Mobile Menu (Simple) -->
+        <div id="mobileMenu" class="hidden lg:hidden bg-white border-t border-gray-100 p-4">
+             <div class="flex flex-col space-y-4">
+                <a href="./academics.html" class="font-bold text-gray-700">Academics</a>
+                <a href="./admissions.html" class="font-bold text-gray-700">Admissions</a>
+                <a href="./research.html" class="font-bold text-gray-700">Research</a>
+                <a href="./campus-life.html" class="font-bold text-gray-700">Campus Life</a>
+                <a href="./athletics.html" class="font-bold text-gray-700">Athletics</a>
+                <a href="./about.html" class="font-bold text-gray-700">About</a>
+                <hr>
+                <a href="./portal.html" class="font-bold text-regal">Student Portal Login</a>
+             </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="relative h-[85vh] flex items-center justify-center hero-parallax text-center text-white" 
+        style="background-image: linear-gradient(rgba(30, 27, 75, 0.6), rgba(30, 27, 75, 0.6)), url('https://images.unsplash.com/photo-1541339907198-e08756dedf3f?auto=format&fit=crop&q=80');">
+        
+        <div class="max-w-4xl mx-auto px-6 relative z-10 animate-fade-in-up">
+            <h1 class="font-serif text-5xl md:text-7xl font-bold mb-6 leading-tight">
+                Define Your Future at <span class="text-gold">Horizon</span>
+            </h1>
+            <p class="text-xl md:text-2xl text-gray-200 mb-10 font-light max-w-2xl mx-auto">
+                A global leader in research, innovation, and character building. Join a community that changes the world.
+            </p>
+            <div class="flex flex-col md:flex-row gap-6 justify-center">
+                <a href="./admissions.html" class="bg-gold text-regal font-bold py-4 px-10 rounded-sm hover:bg-white transition duration-300">Undergraduate Apply</a>
+                <a href="./academics.html" class="border-2 border-white text-white font-bold py-4 px-10 rounded-sm hover:bg-white hover:text-regal transition duration-300">Explore Programs</a>
+            </div>
+        </div>
+
+        <!-- Video Play Button Overlay Mockup -->
+        <div class="absolute bottom-10 right-10 flex items-center gap-4 cursor-pointer group">
+            <span class="uppercase tracking-widest text-xs font-bold opacity-0 group-hover:opacity-100 transition duration-500">Watch Campus Tour</span>
+            <div class="w-16 h-16 rounded-full border-2 border-white/50 flex items-center justify-center group-hover:bg-white/10 transition">
+                <div class="w-0 h-0 border-t-[8px] border-t-transparent border-l-[16px] border-l-white border-b-[8px] border-b-transparent ml-1"></div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Key Stats -->
+    <section class="bg-regal text-white py-16">
+        <div class="max-w-7xl mx-auto px-6 grid grid-cols-2 md:grid-cols-4 gap-12 text-center divider-x opacity-90">
+            <div>
+                <span class="block text-5xl font-serif font-black mb-2 stat-number" data-target="15400" data-suffix="">0</span>
+                <span class="text-sm uppercase tracking-widest font-bold text-gold">Students</span>
+            </div>
+            <div>
+                <span class="block text-5xl font-serif font-black mb-2 stat-number" data-target="1885" data-suffix="">1885</span>
+                <span class="text-sm uppercase tracking-widest font-bold text-gold">Founded</span>
+            </div>
+            <div>
+                <span class="block text-5xl font-serif font-black mb-2 stat-number" data-target="92" data-suffix="%">0</span>
+                <span class="text-sm uppercase tracking-widest font-bold text-gold">Employment Rate</span>
+            </div>
+            <div>
+                <span class="block text-5xl font-serif font-black mb-2 stat-number" data-target="350" data-suffix="+">0</span>
+                <span class="text-sm uppercase tracking-widest font-bold text-gold">Research Labs</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- News & Updates -->
+    <section class="py-24 max-w-7xl mx-auto px-6">
+        <div class="flex justify-between items-end mb-12">
+            <div>
+                <span class="text-regal font-bold uppercase tracking-widest text-sm mb-2 block">Horizon News</span>
+                <h2 class="text-4xl font-serif font-bold text-gray-900">Happening on Campus</h2>
+            </div>
+            <a href="./news.html" class="hidden md:block text-regal font-bold hover:text-gold transition">View All Stories &rarr;</a>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
+            <!-- Article 1 -->
+            <article class="group cursor-pointer">
+                <div class="overflow-hidden rounded-lg mb-6">
+                    <img src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&q=80" class="w-full h-64 object-cover transform group-hover:scale-105 transition duration-700">
+                </div>
+                <span class="text-xs font-bold text-gold uppercase mb-2 block">Research</span>
+                <h3 class="text-2xl font-serif font-bold mb-3 text-gray-800 group-hover:text-regal transition">Horizon Scientists Discover New Clean Energy Method</h3>
+                <p class="text-gray-600 mb-4 line-clamp-3">A breakthrough from the School of Engineering promises to revolutionize solar efficiency.</p>
+                <a href="#" class="text-regal font-bold hover:underline">Read Full Story</a>
+            </article>
+
+            <!-- Article 2 -->
+             <article class="group cursor-pointer">
+                <div class="overflow-hidden rounded-lg mb-6">
+                    <img src="https://images.unsplash.com/photo-1461896836934-ffe607ba8211?auto=format&fit=crop&q=80" class="w-full h-64 object-cover transform group-hover:scale-105 transition duration-700">
+                </div>
+                <span class="text-xs font-bold text-gold uppercase mb-2 block">Athletics</span>
+                <h3 class="text-2xl font-serif font-bold mb-3 text-gray-800 group-hover:text-regal transition">Golden Eagles Win National Championship</h3>
+                <p class="text-gray-600 mb-4 line-clamp-3">For the first time in 20 years, Horizon takes home the trophy in a stunning victory.</p>
+                <a href="./athletics.html" class="text-regal font-bold hover:underline">Read Full Story</a>
+            </article>
+
+            <!-- Article 3 -->
+             <article class="group cursor-pointer">
+                <div class="overflow-hidden rounded-lg mb-6">
+                    <img src="https://images.unsplash.com/photo-1524178232363-1fb2b075b655?auto=format&fit=crop&q=80" class="w-full h-64 object-cover transform group-hover:scale-105 transition duration-700">
+                </div>
+                <span class="text-xs font-bold text-gold uppercase mb-2 block">Student Life</span>
+                <h3 class="text-2xl font-serif font-bold mb-3 text-gray-800 group-hover:text-regal transition">Welcome Week 2026: Schedule Announced</h3>
+                <p class="text-gray-600 mb-4 line-clamp-3">Get ready for a week of concerts, club fairs, and community building events.</p>
+                <a href="./campus-life.html" class="text-regal font-bold hover:underline">Read Full Story</a>
+            </article>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white pt-20 pb-10 mt-auto border-t-[6px] border-gold">
+        <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-4 gap-12 mb-16">
+            <div class="col-span-1 md:col-span-1">
+                 <div class="flex items-center gap-4 mb-6">
+                    <div class="w-10 h-10 bg-white text-regal flex items-center justify-center font-serif text-2xl font-black rounded-sm">H</div>
+                    <span class="text-xl font-serif font-bold uppercase tracking-wide">Horizon</span>
+                </div>
+                <p class="text-gray-400 text-sm leading-relaxed">
+                    123 University Blvd<br>
+                    Cambridge, MA 02138<br><br>
+                    (617) 555-0199<br>
+                    info@horizon.edu
+                </p>
+            </div>
+            
+            <div>
+                <h4 class="font-bold text-gold uppercase tracking-widest text-sm mb-6">Academics</h4>
+                <ul class="space-y-3 text-sm text-gray-400">
+                    <li><a href="./academics.html" class="footer-link">Undergraduate</a></li>
+                    <li><a href="./academics.html" class="footer-link">Graduate</a></li>
+                    <li><a href="./research.html" class="footer-link">Research</a></li>
+                    <li><a href="./library.html" class="footer-link">Library</a></li>
+                </ul>
+            </div>
+
+            <div>
+                <h4 class="font-bold text-gold uppercase tracking-widest text-sm mb-6">Campus</h4>
+                 <ul class="space-y-3 text-sm text-gray-400">
+                    <li><a href="./athletics.html" class="footer-link">Athletics</a></li>
+                    <li><a href="./campus-life.html" class="footer-link">Housing</a></li>
+                    <li><a href="./contact.html" class="footer-link">Maps & Directions</a></li>
+                    <li><a href="./alumni.html" class="footer-link">Alumni Association</a></li>
+                </ul>
+            </div>
+
+            <div>
+                <h4 class="font-bold text-gold uppercase tracking-widest text-sm mb-6">Connect</h4>
+                <div class="flex gap-4 mb-6">
+                    <a href="#" class="w-10 h-10 bg-gray-800 flex items-center justify-center rounded-full hover:bg-gold hover:text-regal transition">𝕏</a>
+                    <a href="#" class="w-10 h-10 bg-gray-800 flex items-center justify-center rounded-full hover:bg-gold hover:text-regal transition">in</a>
+                    <a href="#" class="w-10 h-10 bg-gray-800 flex items-center justify-center rounded-full hover:bg-gold hover:text-regal transition">f</a>
+                </div>
+                <a href="./admissions.html" class="inline-block border border-gray-600 px-6 py-2 rounded text-sm hover:border-gold hover:text-gold transition">Request Info</a>
+            </div>
+        </div>
+        <div class="max-w-7xl mx-auto px-6 border-t border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center text-xs text-gray-500">
+            <p>© 2026 Horizon University. All rights reserved.</p>
+            <div class="flex gap-8 mt-4 md:mt-0">
+                <a href="#" class="hover:text-white">Privacy Policy</a>
+                <a href="#" class="hover:text-white">Accessibility</a>
+                <a href="./portal.html" class="hover:text-white text-gold">Faculty Login</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script src="/js/return-home.js"></script>
+</body>
+</html>

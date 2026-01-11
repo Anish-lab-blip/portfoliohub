@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alumni | Horizon University</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="style.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        regal: '#4c1d95',
+                        gold: '#fbbf24',
+                    },
+                    fontFamily: {
+                        serif: ['Merriweather', 'serif'],
+                        sans: ['Source Sans Pro', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+
+<body class="bg-gray-50 flex flex-col min-h-screen">
+
+    <!-- Sticky Apply Button -->
+    <a href="./admissions.html" class="btn-apply-sticky shadow-2xl">APPLY NOW</a>
+
+    <!-- Navigation -->
+    <nav class="bg-white shadow-md relative z-50">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="flex justify-between items-center h-24">
+                <a href="./index.html" class="flex items-center gap-4 group">
+                    <div
+                        class="w-12 h-12 bg-regal text-gold flex items-center justify-center font-serif text-3xl font-black rounded-sm shadow-sm group-hover:scale-105 transition">
+                        H</div>
+                    <div class="leading-tight">
+                        <span
+                            class="block text-2xl font-serif font-black text-regal uppercase tracking-wide">Horizon</span>
+                        <span
+                            class="block text-xs font-sans font-bold text-gray-500 uppercase tracking-[0.2em]">University</span>
+                    </div>
+                </a>
+                <div class="hidden lg:flex items-center space-x-8 h-full">
+                    <a href="./academics.html" class="font-bold text-gray-700 hover:text-regal">Academics</a>
+                    <a href="./admissions.html" class="font-bold text-gray-700 hover:text-regal">Admissions</a>
+                    <a href="./research.html" class="font-bold text-gray-700 hover:text-regal">Research</a>
+                    <a href="./campus-life.html" class="font-bold text-gray-700 hover:text-regal">Campus Life</a>
+                    <a href="./athletics.html" class="font-bold text-gray-700 hover:text-regal">Athletics</a>
+                    <a href="./about.html" class="font-bold text-gray-700 hover:text-regal">About</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Header -->
+    <header class="bg-regal text-white py-20 text-center">
+        <h1 class="text-5xl font-serif font-bold mb-4">Alumni & Friends</h1>
+        <p class="text-xl text-blue-200 font-light max-w-2xl mx-auto">A global network of over 150,000 changemakers.</p>
+    </header>
+
+    <main class="max-w-7xl mx-auto px-6 py-16">
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-20">
+            <!-- Event Card -->
+            <div class="bg-white border border-gray-200 rounded-sm p-6 shadow-sm hover:shadow-lg transition">
+                <span class="text-xs font-bold text-gold uppercase tracking-widest mb-2 block">Upcoming Event</span>
+                <h3 class="text-xl font-bold text-regal mb-2">Homecoming 2026</h3>
+                <p class="text-gray-600 mb-4 text-sm">Join us for a weekend of celebration, panels, and the big game.
+                </p>
+                <a href="#" class="text-regal font-bold text-sm hover:underline">Register Now &rarr;</a>
+            </div>
+            <!-- Giving Card -->
+            <div class="bg-white border border-gray-200 rounded-sm p-6 shadow-sm hover:shadow-lg transition">
+                <span class="text-xs font-bold text-gold uppercase tracking-widest mb-2 block">Support Horizon</span>
+                <h3 class="text-xl font-bold text-regal mb-2">The Annual Fund</h3>
+                <p class="text-gray-600 mb-4 text-sm">Your gift supports financial aid, research, and student life.</p>
+                <a href="#" class="text-regal font-bold text-sm hover:underline">Give Today &rarr;</a>
+            </div>
+            <!-- Network Card -->
+            <div class="bg-white border border-gray-200 rounded-sm p-6 shadow-sm hover:shadow-lg transition">
+                <span class="text-xs font-bold text-gold uppercase tracking-widest mb-2 block">Connect</span>
+                <h3 class="text-xl font-bold text-regal mb-2">Alumni Directory</h3>
+                <p class="text-gray-600 mb-4 text-sm">Find classmates, network with industry leaders, and mentor
+                    students.</p>
+                <a href="#" class="text-regal font-bold text-sm hover:underline">Login to Access &rarr;</a>
+            </div>
+        </div>
+
+        <section>
+            <h2 class="text-3xl font-serif font-bold text-gray-900 mb-8 text-center">Alumni Spotlight</h2>
+            <div class="bg-white rounded-sm shadow-xl overflow-hidden flex flex-col md:flex-row">
+                <div class="md:w-1/2">
+                    <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&q=80"
+                        class="w-full h-full object-cover">
+                </div>
+                <div class="md:w-1/2 p-12 flex flex-col justify-center">
+                    <h3 class="text-2xl font-bold text-regal mb-2">Sarah Chen '10</h3>
+                    <p class="text-gray-500 italic mb-6">CEO & Founder, EcoTech Innovations</p>
+                    <p class="text-gray-700 leading-relaxed mb-6">
+                        "Horizon taught me that technology isn't just about code—it's about impact. The mentorship I
+                        received from the Engineering faculty gave me the confidence to launch my startup right out of
+                        dorm room."
+                    </p>
+                    <a href="#" class="text-gold font-bold uppercase tracking-widest hover:text-regal transition">Read
+                        Her Story</a>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white pt-20 pb-10 mt-auto border-t-[6px] border-gold">
+        <div class="max-w-7xl mx-auto px-6 text-center text-sm text-gray-500">
+            <p>© 2026 Horizon University. All rights reserved.</p>
+        </div>
+    </footer>
+
+</body>
+
+</html>

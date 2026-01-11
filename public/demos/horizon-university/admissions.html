@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admissions | Horizon University</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="style.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        regal: '#4c1d95',
+                        gold: '#fbbf24',
+                    },
+                    fontFamily: {
+                        serif: ['Merriweather', 'serif'],
+                        sans: ['Source Sans Pro', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+
+<body class="bg-gray-50 flex flex-col min-h-screen">
+
+    <!-- Sticky Apply Button -->
+    <a href="./admissions.html" class="btn-apply-sticky shadow-2xl">APPLY NOW</a>
+
+    <!-- Navigation -->
+    <nav class="bg-white shadow-md relative z-50">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="flex justify-between items-center h-24">
+                <a href="./index.html" class="flex items-center gap-4 group">
+                    <div
+                        class="w-12 h-12 bg-regal text-gold flex items-center justify-center font-serif text-3xl font-black rounded-sm shadow-sm group-hover:scale-105 transition">
+                        H</div>
+                    <div class="leading-tight">
+                        <span
+                            class="block text-2xl font-serif font-black text-regal uppercase tracking-wide">Horizon</span>
+                        <span
+                            class="block text-xs font-sans font-bold text-gray-500 uppercase tracking-[0.2em]">University</span>
+                    </div>
+                </a>
+                <div class="hidden lg:flex items-center space-x-8 h-full">
+                    <a href="./academics.html" class="font-bold text-gray-700 hover:text-regal">Academics</a>
+                    <a href="./admissions.html" class="font-bold text-gray-700 hover:text-regal">Admissions</a>
+                    <a href="./research.html" class="font-bold text-gray-700 hover:text-regal">Research</a>
+                    <a href="./campus-life.html" class="font-bold text-gray-700 hover:text-regal">Campus Life</a>
+                    <a href="./athletics.html" class="font-bold text-gray-700 hover:text-regal">Athletics</a>
+                    <a href="./about.html" class="font-bold text-gray-700 hover:text-regal">About</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Header -->
+    <header class="bg-regal text-white py-20 text-center">
+        <h1 class="text-5xl font-serif font-bold mb-4">Admissions & Aid</h1>
+        <p class="text-xl text-blue-200 font-light max-w-2xl mx-auto">Join a diverse community of scholars committed to
+            excellence.</p>
+    </header>
+
+    <main class="max-w-7xl mx-auto px-6 py-16">
+
+        <!-- Steps -->
+        <section class="mb-20">
+            <h2 class="text-3xl font-serif font-bold text-gray-900 mb-12 text-center">How to Apply</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="text-center">
+                    <div
+                        class="w-16 h-16 bg-gold text-regal font-black text-2xl rounded-full flex items-center justify-center mx-auto mb-6">
+                        1</div>
+                    <h3 class="text-xl font-bold mb-2">Submit Application</h3>
+                    <p class="text-gray-600">Complete the Common App or Horizon Direct Application by Jan 1st.</p>
+                </div>
+                <div class="text-center">
+                    <div
+                        class="w-16 h-16 bg-gold text-regal font-black text-2xl rounded-full flex items-center justify-center mx-auto mb-6">
+                        2</div>
+                    <h3 class="text-xl font-bold mb-2">Financial Aid</h3>
+                    <p class="text-gray-600">Submit FAFSA and CSS Profile to be considered for need-based aid.</p>
+                </div>
+                <div class="text-center">
+                    <div
+                        class="w-16 h-16 bg-gold text-regal font-black text-2xl rounded-full flex items-center justify-center mx-auto mb-6">
+                        3</div>
+                    <h3 class="text-xl font-bold mb-2">Decision</h3>
+                    <p class="text-gray-600">Decisions are released in late March. Admitted students reply by May 1st.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Stats Grid -->
+        <section class="bg-white shadow-lg border border-gray-100 p-12 rounded-sm mb-20">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+                <div>
+                    <span class="text-gold font-bold uppercase tracking-widest text-sm mb-2 block">Value &
+                        Affordability</span>
+                    <h2 class="text-3xl font-serif font-bold text-regal mb-4">Investing in Your Future</h2>
+                    <p class="text-gray-600 mb-6 leading-relaxed">
+                        We are committed to meeting 100% of demonstrated financial need for all admitted students.
+                        Horizon is loan-free for families earning under $75,000.
+                    </p>
+                    <ul class="space-y-2 mb-8">
+                        <li class="flex items-center gap-3 text-gray-700"><span class="text-gold">✓</span> Need-Blind
+                            Admission</li>
+                        <li class="flex items-center gap-3 text-gray-700"><span class="text-gold">✓</span> $50 Million
+                            in Annual Grants</li>
+                        <li class="flex items-center gap-3 text-gray-700"><span class="text-gold">✓</span> Merit
+                            Scholarships Available</li>
+                    </ul>
+                    <a href="#"
+                        class="btn-primary inline-block bg-regal text-white px-8 py-3 font-bold rounded-sm hover:bg-gray-900 transition">Estimate
+                        Your Cost</a>
+                </div>
+                <div>
+                    <img src="https://images.unsplash.com/photo-1523050854058-8df90110c9f1?auto=format&fit=crop&q=80"
+                        class="rounded shadow-md">
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white pt-20 pb-10 mt-auto border-t-[6px] border-gold">
+        <div class="max-w-7xl mx-auto px-6 text-center text-sm text-gray-500">
+            <p>© 2026 Horizon University. All rights reserved.</p>
+        </div>
+    </footer>
+
+</body>
+
+</html>

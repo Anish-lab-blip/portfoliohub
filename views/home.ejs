@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio | Vibe Coder</title>
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Poppins:wght@700&display=swap"
+        rel="stylesheet">
+    <!-- Styles -->
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+    <div class="bg-glow"></div>
+    <div class="bg-glow-2"></div>
+
+    <div class="container">
+        <header>
+            <h1 class="hero-title">Hey, I'm Anish Agarwal.</h1>
+            <div class="hero-subtitle">
+                <span id="typing-text"></span><span class="cursor"></span>
+            </div>
+            <p style="color: var(--text-secondary); max-width: 600px;">
+                Welcome to my digital playground. This is a Vercel-powered monolith scanning for creativity.
+            </p>
+        </header>
+
+        <section class="projects-section">
+            <h2 class="section-title">Latest Deploys</h2>
+
+            <div class="grid">
+                <% if (!projects || projects.length===0) { %>
+                    <div class="card reveal">
+                        <h3>No projects found</h3>
+                        <p>Drop a folder in /public/demos/ to get started.</p>
+                    </div>
+                    <% } else { %>
+                        <% projects.forEach(function(project) { %>
+                            <div class="card">
+                                <% if (project.thumbnail) { %>
+                                    <div class="card-thumb-container">
+                                        <img src="<%= project.thumbnail %>" alt="<%= project.title %>"
+                                            class="card-thumb">
+                                    </div>
+                                    <% } %>
+                                        <div class="card-content">
+                                            <h3>
+                                                <%= project.title %>
+                                            </h3>
+                                            <div class="tags">
+                                                <% if (project.tags) { %>
+                                                    <% project.tags.forEach(function(tag) { %>
+                                                        <span class="tag">
+                                                            <%= tag %>
+                                                        </span>
+                                                        <% }); %>
+                                                            <% } %>
+                                            </div>
+                                            <p>
+                                                <%= project.summary %>
+                                            </p>
+                                            <a href="/demos/<%= project.slug %>/index.html" class="btn-link"
+                                                target="_blank">Launch Demo</a>
+                                        </div>
+                            </div>
+                            <% }); %>
+                                <% } %>
+            </div>
+        </section>
+
+        <section class="cta-section reveal">
+            <h2 class="cta-title">Got a vision?</h2>
+            <p style="color: var(--text-secondary); max-width: 500px; margin: 0 auto;">
+                I am currently accepting new projects. Let's turn your idea into a digital reality.
+            </p>
+            <a href="/contact" class="cta-btn">Get a Quote</a>
+        </section>
+
+        <footer
+            style="margin-top: 4rem; padding-bottom: 2rem; color: var(--text-secondary); text-align: center; font-size: 0.8rem;">
+            <p>Built with Express, EJS & Glassmorphism. Deployed on Vercel.</p>
+        </footer>
+    </div>
+
+    <script src="/js/main.js"></script>
+</body>
+
+</html>

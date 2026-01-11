@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Computer Science | Horizon University</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="style.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        regal: '#4c1d95',
+                        gold: '#fbbf24',
+                    },
+                    fontFamily: {
+                        serif: ['Merriweather', 'serif'],
+                        sans: ['Source Sans Pro', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+
+<body class="bg-gray-50 flex flex-col min-h-screen">
+
+    <!-- Sticky Apply Button -->
+    <a href="./admissions.html" class="btn-apply-sticky shadow-2xl">APPLY NOW</a>
+
+    <!-- Navigation -->
+    <nav class="bg-white shadow-md relative z-50">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="flex justify-between items-center h-24">
+                <a href="./index.html" class="flex items-center gap-4 group">
+                    <div
+                        class="w-12 h-12 bg-regal text-gold flex items-center justify-center font-serif text-3xl font-black rounded-sm shadow-sm group-hover:scale-105 transition">
+                        H</div>
+                </a>
+                <div class="flex items-center space-x-4">
+                    <span class="uppercase tracking-widest text-xs font-bold text-gray-500">School of Engineering</span>
+                    <span class="text-gray-300">|</span>
+                    <span class="font-bold text-regal">Department of Computer Science</span>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Sidebar & Content Layout -->
+    <div class="max-w-7xl mx-auto px-6 py-12 grid grid-cols-1 lg:grid-cols-4 gap-12">
+
+        <!-- Sidebar -->
+        <aside class="hidden lg:block">
+            <div class="sticky top-8">
+                <h3 class="font-serif font-bold text-regal mb-6 border-b-2 border-gold pb-2 inline-block">Table of
+                    Contents</h3>
+                <ul class="space-y-4 text-sm text-gray-600 border-l border-gray-200 pl-4">
+                    <li><a href="#overview" class="hover:text-regal font-bold block">Overview</a></li>
+                    <li><a href="#curriculum" class="hover:text-regal block">Curriculum</a></li>
+                    <li><a href="#faculty" class="hover:text-regal block">Faculty</a></li>
+                    <li><a href="#research" class="hover:text-regal block">Research Areas</a></li>
+                </ul>
+
+                <div class="mt-12 bg-regal text-white p-6 rounded-sm">
+                    <h4 class="font-bold mb-2 text-gold">Program Chair</h4>
+                    <p class="text-sm mb-4">Dr. Alan Turing III</p>
+                    <a href="mailto:cs-chair@horizon.edu"
+                        class="text-xs border border-white px-3 py-1 hover:bg-white hover:text-regal transition">Contact
+                        Chair</a>
+                </div>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="col-span-1 lg:col-span-3">
+
+            <div id="overview" class="mb-16">
+                <h1 class="text-4xl font-serif font-bold text-gray-900 mb-6">B.S. in Computer Science</h1>
+                <img src="https://images.unsplash.com/photo-1531482615713-2afd69097998?auto=format&fit=crop&q=80"
+                    class="w-full h-80 object-cover rounded-sm mb-8 shadow-md">
+                <p class="text-lg text-gray-700 leading-relaxed mb-6">
+                    The Horizon CS program combines rigorous theoretical foundations with hands-on application. Students
+                    gain deep expertise in algorithms, systems, AI, and software engineering, preparing them to solve
+                    the most complex technological challenges of our time.
+                </p>
+            </div>
+
+            <div id="curriculum" class="mb-16">
+                <h2 class="text-3xl font-serif font-bold text-regal mb-8">Curriculum Requirements</h2>
+                <div class="bg-white rounded-sm shadow-sm border border-gray-200 overflow-hidden">
+                    <table class="w-full text-left border-collapse">
+                        <thead>
+                            <tr class="bg-gray-100 text-gray-700 text-sm uppercase">
+                                <th class="p-4 border-b border-gray-200">Course Code</th>
+                                <th class="p-4 border-b border-gray-200">Title</th>
+                                <th class="p-4 border-b border-gray-200">Credits</th>
+                            </tr>
+                        </thead>
+                        <tbody class="text-sm">
+                            <tr class="border-b border-gray-100">
+                                <td class="p-4 font-mono font-bold text-regal">CS 101</td>
+                                <td class="p-4">Intro to Computer Science</td>
+                                <td class="p-4">4</td>
+                            </tr>
+                            <tr class="border-b border-gray-100 bg-gray-50">
+                                <td class="p-4 font-mono font-bold text-regal">CS 202</td>
+                                <td class="p-4">Data Structures & Algorithms</td>
+                                <td class="p-4">4</td>
+                            </tr>
+                            <tr class="border-b border-gray-100">
+                                <td class="p-4 font-mono font-bold text-regal">CS 305</td>
+                                <td class="p-4">Computer Systems</td>
+                                <td class="p-4">4</td>
+                            </tr>
+                            <tr class="border-b border-gray-100 bg-gray-50">
+                                <td class="p-4 font-mono font-bold text-regal">CS 450</td>
+                                <td class="p-4">Artificial Intelligence</td>
+                                <td class="p-4">4</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <div id="faculty" class="mb-16">
+                <h2 class="text-3xl font-serif font-bold text-regal mb-8">Distinguished Faculty</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div class="flex gap-4 p-4 bg-white border border-gray-200 rounded-sm">
+                        <div class="w-16 h-16 bg-gray-200 rounded-full flex-shrink-0"></div>
+                        <div>
+                            <h4 class="font-bold text-gray-900">Dr. Ada Lovelace II</h4>
+                            <p class="text-sm text-gray-500 mb-2">Professor of AI</p>
+                            <a href="#" class="text-regal text-xs font-bold hover:underline">View Profile</a>
+                        </div>
+                    </div>
+                    <div class="flex gap-4 p-4 bg-white border border-gray-200 rounded-sm">
+                        <div class="w-16 h-16 bg-gray-200 rounded-full flex-shrink-0"></div>
+                        <div>
+                            <h4 class="font-bold text-gray-900">Dr. Grace Hopper IV</h4>
+                            <p class="text-sm text-gray-500 mb-2">Systems Architecture</p>
+                            <a href="#" class="text-regal text-xs font-bold hover:underline">View Profile</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </main>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white pt-20 pb-10 mt-auto border-t-[6px] border-gold">
+        <div class="max-w-7xl mx-auto px-6 text-center text-sm text-gray-500">
+            <p>© 2026 Horizon University. All rights reserved.</p>
+        </div>
+    </footer>
+
+</body>
+
+</html>

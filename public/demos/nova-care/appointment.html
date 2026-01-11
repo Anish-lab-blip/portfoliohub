@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Appointment | Nova Care Hospital</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="style.css">
+    <script>
+        function handleBooking(e) {
+            e.preventDefault();
+            alert("Appointment request submitted successfully. Our team will contact you shortly to confirm.");
+            e.target.reset();
+        }
+    </script>
+</head>
+
+<body class="bg-slate-50">
+
+    <!-- Navbar -->
+    <nav class="sticky top-0 z-50 bg-white border-b border-slate-100 shadow-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <div class="flex-shrink-0 flex items-center gap-2">
+                    <div
+                        class="w-10 h-10 bg-blue-600 rounded-lg flex items-center justify-center text-white font-bold text-xl">
+                        +</div>
+                    <a href="./index.html" class="font-bold text-2xl tracking-tight text-slate-900">Nova<span
+                            class="text-blue-600">Care</span></a>
+                </div>
+                <!-- Simplified nav for checkout process focus -->
+                <div class="hidden md:flex items-center gap-4">
+                    <span class="text-sm font-medium text-slate-500">Need immediate help?</span>
+                    <a href="./emergency.html"
+                        class="btn-emergency px-5 py-2.5 rounded-full text-sm shadow-lg flex items-center gap-2"><span>🚨</span>
+                        EMERGENCY: 911</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <main class="max-w-3xl mx-auto px-4 py-16">
+        <div class="bg-white rounded-2xl shadow-xl overflow-hidden border border-slate-200">
+            <div class="bg-blue-600 p-8 text-center">
+                <h1 class="text-xl font-bold text-white uppercase tracking-wider">Book Your Visit</h1>
+                <p class="text-blue-100 mt-2">Start your journey to better health.</p>
+            </div>
+
+            <form onsubmit="handleBooking(event)" class="p-8 md:p-12 space-y-8">
+
+                <!-- Section 1 -->
+                <div>
+                    <h3 class="text-lg font-bold text-slate-900 mb-4 flex items-center gap-2">
+                        <span
+                            class="w-6 h-6 bg-slate-100 rounded-full flex items-center justify-center text-xs">1</span>
+                        Patient Details
+                    </h3>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div>
+                            <label class="block text-sm font-medium text-slate-600 mb-1">First Name</label>
+                            <input type="text" class="input-medical" required>
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-slate-600 mb-1">Last Name</label>
+                            <input type="text" class="input-medical" required>
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-slate-600 mb-1">Phone Number</label>
+                            <input type="tel" class="input-medical" required>
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-slate-600 mb-1">Email (Optional)</label>
+                            <input type="email" class="input-medical">
+                        </div>
+                    </div>
+                </div>
+
+                <hr class="border-slate-100">
+
+                <!-- Section 2 -->
+                <div>
+                    <h3 class="text-lg font-bold text-slate-900 mb-4 flex items-center gap-2">
+                        <span
+                            class="w-6 h-6 bg-slate-100 rounded-full flex items-center justify-center text-xs">2</span>
+                        Appointment Preference
+                    </h3>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div>
+                            <label class="block text-sm font-medium text-slate-600 mb-1">Department</label>
+                            <select class="input-medical">
+                                <option>General Physician</option>
+                                <option>Cardiology</option>
+                                <option>Neurology</option>
+                                <option>Pediatrics</option>
+                                <option>Orthopedics</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-slate-600 mb-1">Preferred Date</label>
+                            <input type="date" class="input-medical" required>
+                        </div>
+                        <div class="md:col-span-2">
+                            <label class="block text-sm font-medium text-slate-600 mb-1">Reason for Visit /
+                                Symptoms</label>
+                            <textarea class="input-medical h-32"
+                                placeholder="Please briefly describe your symptoms..."></textarea>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="pt-4">
+                    <button type="submit" class="w-full btn-primary py-4 rounded-xl font-bold text-lg shadow-lg">Confirm
+                        Appointment Request</button>
+                    <p class="text-center text-xs text-slate-400 mt-4">By booking, you agree to our Terms of Service.
+                        Emergency cases should call 911 immediately.</p>
+                </div>
+
+            </form>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-slate-900 border-t border-slate-800 pt-16 pb-8">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <p class="text-slate-500 text-sm text-center">© 2026 Nova Care Hospital. All rights reserved.</p>
+        </div>
+    </footer>
+
+</body>
+
+</html>

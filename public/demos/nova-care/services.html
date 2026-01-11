@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Departments | Nova Care Hospital</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="bg-slate-50">
+
+    <!-- Navbar -->
+    <nav class="sticky top-0 z-50 bg-white border-b border-slate-100 shadow-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <div class="flex-shrink-0 flex items-center gap-2">
+                    <div
+                        class="w-10 h-10 bg-blue-600 rounded-lg flex items-center justify-center text-white font-bold text-xl">
+                        +</div>
+                    <a href="./index.html" class="font-bold text-2xl tracking-tight text-slate-900">Nova<span
+                            class="text-blue-600">Care</span></a>
+                </div>
+                <div class="hidden lg:flex items-center space-x-8">
+                    <a href="./index.html" class="text-sm font-medium text-slate-600 hover:text-blue-600">Home</a>
+                    <a href="./about.html" class="text-sm font-medium text-slate-600 hover:text-blue-600">About</a>
+                    <a href="./doctors.html" class="text-sm font-medium text-slate-600 hover:text-blue-600">Doctors</a>
+                    <a href="./services.html" class="text-sm font-medium text-blue-600">Services</a>
+                    <a href="./patients.html"
+                        class="text-sm font-medium text-slate-600 hover:text-blue-600">Patients</a>
+                    <a href="./news.html" class="text-sm font-medium text-slate-600 hover:text-blue-600">News</a>
+                    <a href="./contact.html" class="text-sm font-medium text-slate-600 hover:text-blue-600">Contact</a>
+                </div>
+                <div class="hidden md:flex items-center gap-4">
+                    <a href="./appointment.html"
+                        class="btn-primary px-5 py-2.5 rounded-full font-semibold text-sm shadow-lg shadow-blue-200">Book
+                        Appointment</a>
+                    <a href="./emergency.html"
+                        class="btn-emergency px-5 py-2.5 rounded-full text-sm shadow-lg flex items-center gap-2"><span>🚨</span>
+                        EMERGENCY: 911</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <header class="py-20 text-center bg-white border-b border-slate-100">
+        <h1 class="text-4xl font-extrabold text-slate-900 mb-4">Centers of Excellence</h1>
+        <p class="text-xl text-slate-500 max-w-2xl mx-auto">Providing specialized care across 30+ medical disciplines.
+        </p>
+    </header>
+
+    <main class="max-w-7xl mx-auto px-4 py-16">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+            <!-- Cardiology -->
+            <a href="./cardiology.html"
+                class="bg-white p-8 rounded-xl shadow-sm border border-slate-100 hover:shadow-xl transition group">
+                <div
+                    class="w-12 h-12 bg-blue-50 rounded-lg flex items-center justify-center text-2xl mb-6 group-hover:bg-blue-600 group-hover:text-white transition">
+                    ❤️</div>
+                <h3 class="text-xl font-bold text-slate-900 mb-2">Cardiology</h3>
+                <p class="text-slate-500 text-sm leading-relaxed mb-4">Comprehensive heart care including bypass
+                    surgery, angiography, and preventive screening.</p>
+                <span
+                    class="text-blue-600 text-sm font-bold flex items-center gap-1 group-hover:translate-x-1 transition">Learn
+                    More &rarr;</span>
+            </a>
+
+            <!-- Neurology -->
+            <div class="bg-white p-8 rounded-xl shadow-sm border border-slate-100">
+                <div
+                    class="w-12 h-12 bg-purple-50 rounded-lg flex items-center justify-center text-2xl mb-6 text-purple-600">
+                    🧠</div>
+                <h3 class="text-xl font-bold text-slate-900 mb-2">Neurology</h3>
+                <p class="text-slate-500 text-sm leading-relaxed">Advanced treatment for stroke, epilepsy, and
+                    neurodegenerative disorders.</p>
+            </div>
+
+            <!-- Orthopedics -->
+            <div class="bg-white p-8 rounded-xl shadow-sm border border-slate-100">
+                <div
+                    class="w-12 h-12 bg-orange-50 rounded-lg flex items-center justify-center text-2xl mb-6 text-orange-600">
+                    🦴</div>
+                <h3 class="text-xl font-bold text-slate-900 mb-2">Orthopedics</h3>
+                <p class="text-slate-500 text-sm leading-relaxed">Joint replacement, sports medicine, and spine surgery
+                    experts.</p>
+            </div>
+
+            <!-- Oncology -->
+            <div class="bg-white p-8 rounded-xl shadow-sm border border-slate-100">
+                <div class="w-12 h-12 bg-red-50 rounded-lg flex items-center justify-center text-2xl mb-6 text-red-600">
+                    🎗️</div>
+                <h3 class="text-xl font-bold text-slate-900 mb-2">Oncology</h3>
+                <p class="text-slate-500 text-sm leading-relaxed">State-of-the-art cancer care with radiation and
+                    chemotherapy units.</p>
+            </div>
+
+            <!-- Pediatrics -->
+            <div class="bg-white p-8 rounded-xl shadow-sm border border-slate-100">
+                <div
+                    class="w-12 h-12 bg-green-50 rounded-lg flex items-center justify-center text-2xl mb-6 text-green-600">
+                    👶</div>
+                <h3 class="text-xl font-bold text-slate-900 mb-2">Pediatrics</h3>
+                <p class="text-slate-500 text-sm leading-relaxed">Dedicated care for newborns, children, and
+                    adolescents.</p>
+            </div>
+
+            <!-- Emergency -->
+            <div class="bg-white p-8 rounded-xl shadow-sm border border-slate-100">
+                <div
+                    class="w-12 h-12 bg-yellow-50 rounded-lg flex items-center justify-center text-2xl mb-6 text-yellow-600">
+                    🚑</div>
+                <h3 class="text-xl font-bold text-slate-900 mb-2">Emergency Medicine</h3>
+                <p class="text-slate-500 text-sm leading-relaxed">24/7 trauma center equipped for critical life-saving
+                    procedures.</p>
+            </div>
+
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-slate-900 border-t border-slate-800 pt-16 pb-8">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <p class="text-slate-500 text-sm text-center">© 2026 Nova Care Hospital. All rights reserved.</p>
+        </div>
+    </footer>
+
+</body>
+
+</html>

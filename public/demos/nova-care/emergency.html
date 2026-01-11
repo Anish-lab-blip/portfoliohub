@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EMERGENCY | Nova Care Hospital</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .blink-bg {
+            animation: blink 2s infinite;
+        }
+
+        @keyframes blink {
+            0% {
+                background-color: #ef4444;
+            }
+
+            50% {
+                background-color: #dc2626;
+            }
+
+            100% {
+                background-color: #ef4444;
+            }
+        }
+    </style>
+</head>
+
+<body class="bg-gray-100">
+
+    <!-- Navbar -->
+    <nav class="sticky top-0 z-50 bg-white border-b border-slate-100 shadow-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <div class="flex-shrink-0 flex items-center gap-2">
+                    <div
+                        class="w-10 h-10 bg-blue-600 rounded-lg flex items-center justify-center text-white font-bold text-xl">
+                        +</div>
+                    <a href="./index.html" class="font-bold text-2xl tracking-tight text-slate-900">Nova<span
+                            class="text-blue-600">Care</span></a>
+                </div>
+                <!-- Simplified nav to reduce distraction -->
+                <div class="hidden md:flex items-center gap-4">
+                    <a href="./index.html" class="text-sm font-medium text-slate-600 hover:text-blue-600">Back to
+                        Website</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Emergency Hero -->
+    <div class="bg-red-600 text-white py-20 text-center blink-bg">
+        <h1 class="text-6xl font-extrabold mb-8 tracking-wider">EMERGENCY?</h1>
+        <p class="text-2xl font-bold mb-8">CALL FOR AMBULANCE IMMEDIATELY</p>
+        <a href="tel:911"
+            class="inline-block bg-white text-red-600 text-4xl font-black py-6 px-12 rounded-full shadow-2xl hover:scale-105 transition">
+            DIAL 911
+        </a>
+    </div>
+
+    <!-- Instructions -->
+    <main class="max-w-4xl mx-auto px-4 py-16 -mt-10 relative z-10">
+        <div class="bg-white rounded-xl shadow-2xl p-8 border-t-8 border-red-600">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+
+                <div>
+                    <h2 class="text-2xl font-bold text-slate-900 mb-6">Hospital Emergency Line</h2>
+                    <p class="text-slate-500 mb-4">For urgent medical advice or ambulance dispatch:</p>
+                    <p class="text-3xl font-bold text-red-600 mb-2">1-800-NOVA-SOS</p>
+                    <p class="text-sm text-slate-400">Available 24/7 • 365 Days</p>
+
+                    <h2 class="text-2xl font-bold text-slate-900 mt-8 mb-6">Location</h2>
+                    <address class="not-italic text-slate-600">
+                        <strong>Trauma Center Entrance (Gate 4)</strong><br>
+                        123 Health Avenue,<br>
+                        Medical District, NY 10001
+                    </address>
+                </div>
+
+                <div>
+                    <h2 class="text-2xl font-bold text-slate-900 mb-6">First Aid Quick Guide</h2>
+                    <ul class="space-y-4">
+                        <li class="bg-red-50 p-4 rounded-lg border border-red-100 flex gap-3">
+                            <span class="font-bold text-red-600">Heart Attack:</span>
+                            <span class="text-sm text-slate-700">Chew Aspirin, Keep patient calm/seated.</span>
+                        </li>
+                        <li class="bg-red-50 p-4 rounded-lg border border-red-100 flex gap-3">
+                            <span class="font-bold text-red-600">Bleeding:</span>
+                            <span class="text-sm text-slate-700">Apply direct pressure with clean cloth.</span>
+                        </li>
+                        <li class="bg-red-50 p-4 rounded-lg border border-red-100 flex gap-3">
+                            <span class="font-bold text-red-600">Burns:</span>
+                            <span class="text-sm text-slate-700">Run cool (not cold) water over area.</span>
+                        </li>
+                    </ul>
+                </div>
+
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-slate-900 border-t border-slate-800 pt-16 pb-8 mt-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <p class="text-slate-500 text-sm text-center">© 2026 Nova Care Hospital. All rights reserved.</p>
+        </div>
+    </footer>
+
+
+</body>
+
+</html>

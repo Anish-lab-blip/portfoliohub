@@ -40,6 +40,7 @@ The system automatically builds the Express API as a Serverless Function and ser
 Plaintext
 
 /
+
 ├── api/             # Express Server Logic (Vercel Entry Point)
 ├── public/          # Static Assets
 │   ├── css/         # Global Styles

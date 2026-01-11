@@ -1,4 +1,4 @@
-# 🚀 Portfolio Hub & Digital Factory
+# 🚀 Portfolio Hub 
 
 > Live: [https://designyourvision.vercel.app](https://designyourvision.vercel.app)
 
